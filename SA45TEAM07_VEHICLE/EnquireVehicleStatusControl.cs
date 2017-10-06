@@ -40,10 +40,18 @@ namespace SA45TEAM07_VEHICLE
         public void retrieveVehicle(string plateNum)
         {
 
-
+            Vehicle vehicle = ; // sth from DAO
 
             // need to pass in Vehicle as parameter
-            vehicleDetailUI = new FormVehicleDetails(this);
+
+            try
+            {
+                vehicleDetailUI = new FormVehicleDetails(this);
+            }
+            catch
+            {
+
+            }
 
             // if succesful
             if (true)
