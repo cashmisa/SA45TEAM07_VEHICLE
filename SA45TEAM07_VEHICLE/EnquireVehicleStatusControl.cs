@@ -19,7 +19,7 @@ namespace SA45TEAM07_VEHICLE
             {
                 searchUI = new FormSearch(this);
                 searchUI.displaySearchUI();
-            }   
+            }
         }
 
         public MainControl MainControl
@@ -30,7 +30,6 @@ namespace SA45TEAM07_VEHICLE
             }
         }
 
-
         public FormSearch SearchUI
         {
             get
@@ -38,7 +37,6 @@ namespace SA45TEAM07_VEHICLE
                 return searchUI;
             }
         }
-
 
         public void retrieveVehicle(string plateNum)
         {
