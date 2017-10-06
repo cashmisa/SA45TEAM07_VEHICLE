@@ -40,7 +40,7 @@ namespace SA45TEAM07_VEHICLE
         public void retrieveVehicle(string plateNum)
         {
 
-            Vehicle vehicle = ; // sth from DAO
+            //Vehicle vehicle; // sth from DAO
 
             // need to pass in Vehicle as parameter
 
