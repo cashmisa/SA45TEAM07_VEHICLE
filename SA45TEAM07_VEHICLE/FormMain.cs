@@ -32,10 +32,19 @@ namespace SA45TEAM07_VEHICLE
             }
         }
 
+        public void displayPortalUI()
+        {
+            this.ShowDialog();
+        }
+
+        public void focus()
+        {
+
+        }
+
         private void enquireStatusToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            mainControl.initialiseEnquiryControl();
-          
+            mainControl.initialiseEnquiryControl();        
         }
     }
 }
