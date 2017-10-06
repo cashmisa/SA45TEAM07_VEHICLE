@@ -1,6 +1,6 @@
 ﻿namespace SA45TEAM07_VEHICLE
 {
-    partial class frmSearchUI
+    partial class FormSearch
     {
         /// <summary>
         /// Required designer variable.

@@ -8,16 +8,21 @@ namespace SA45TEAM07_VEHICLE
 {
     public class EnquireVehicleStatusControl
     {
-        private frmSearchUI searchUI;
+        private FormSearch searchUI;
         private MainControl mainControl;
 
         public EnquireVehicleStatusControl(MainControl mainControl)
         {
             this.mainControl = mainControl;
-            displaySearchUI();      
+
+            if (searchUI == null)
+            {
+                searchUI = new FormSearch(this);
+                searchUI.displaySearchUI();
+            }   
         }
 
-        public frmSearchUI SearchUI
+        public FormSearch SearchUI
         {
             get
             {
@@ -25,14 +30,6 @@ namespace SA45TEAM07_VEHICLE
             }
         }
 
-        public void displaySearchUI()
-        {
-            if (searchUI == null)
-            {
-                searchUI = new frmSearchUI();
-                searchUI.Show();
-            }
-        }
 
         public void retrieveVehicle(string plateNum)
         {

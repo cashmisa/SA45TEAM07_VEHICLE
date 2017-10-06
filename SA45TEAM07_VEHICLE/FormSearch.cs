@@ -10,11 +10,23 @@ using System.Windows.Forms;
 
 namespace SA45TEAM07_VEHICLE
 {
-    public partial class frmSearchUI : BaseForm
+    public partial class FormSearch : BaseForm
     {
-        public frmSearchUI()
+        private EnquireVehicleStatusControl enquiryControl;
+
+        public FormSearch()
         {
             InitializeComponent();
+        }
+
+        public FormSearch(EnquireVehicleStatusControl enquiryControl)
+        {
+            this.enquiryControl = enquiryControl;
+        }
+
+        public void displaySearchUI()
+        {
+            this.Show();
         }
     }
 }
