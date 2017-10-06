@@ -17,8 +17,8 @@ namespace SA45TEAM07_VEHICLE
             this.mainControl = mainControl;
             this.formCategorySearch = new FormCategorySearch(this);
             formCategorySearch.displayCategorySearchUI();
-            //List<string> vehicleCategory = VehicleDAO;//retrieve via DAO
-            //formCategorySearch.displayCategory(vehicleCategory);
+            List<string> vehicleCategory = VehicleDAO.Instance.RetrieveCategoryList();//retrieve via DAO
+            formCategorySearch.displayCategory(vehicleCategory);
 
         }
 

@@ -46,10 +46,11 @@ namespace SA45TEAM07_VEHICLE
 
         public void displayCategory(List<string> vehiclecategory)
         {
-            foreach(var veh in vehiclecategory)
-            {
-                this.lbxCategory.Items.Add(veh);
-            }
+            lbxCategory.DataSource = vehiclecategory;
+            //foreach(var veh in vehiclecategory)
+            //{
+            //    this.lbxCategory.Items.Add(veh);
+            //}
         }
     }
 }

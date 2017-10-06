@@ -205,7 +205,7 @@ namespace SA45TEAM07_VEHICLE
             VehicleDAO vehicleDAO = VehicleDAO.Instance;
             vehicleDAO.OpenConnection();
 
-            Vehicle v = vehicleDAO.RetrieveVehicle("BSS031E");
+            Vehicle v = vehicleDAO.RetrieveVehicle("CC1062R");
             vehicleDAO.CloseConnection();
 
 
