@@ -10,17 +10,18 @@ namespace SA45TEAM07_VEHICLE
 {
     class VehicleDAO
     {
-        const int CAR = 0;
-        const int TRUCK = 1;
-        const int BUS = 2;
+        public const int CAR = 0;
+        public const int TRUCK = 1;
+        public const int BUS = 2;
 
         SqlConnection cn;
-        SqlCommand cmInsert;
-        SqlCommand cmSelbyPK;
-        SqlCommand cmSelCountbyPK;
+        SqlCommand cmSelCarbyPK;
+        SqlCommand cmSelTruckbyPK;
+        SqlCommand cmSelBusbyPK;
         SqlCommand cmSelCarAvailable;
         SqlCommand cmSelTruckAvailable;
         SqlCommand cmSelBusAvailable;
+        SqlCommand cmSelCategory;
 
         private static VehicleDAO dbInstance;
 
@@ -37,17 +38,56 @@ namespace SA45TEAM07_VEHICLE
 
         private void InitializeSQLCmd()
         {
-            cmSelCarAvailable.CommandText = "SELECT FROM ";
+            cmSelCarbyPK = new SqlCommand();
+            cmSelTruckbyPK = new SqlCommand();
+            cmSelBusbyPK = new SqlCommand();
+
+            cmSelCarAvailable = new SqlCommand();
+            cmSelTruckAvailable = new SqlCommand();
+            cmSelBusAvailable = new SqlCommand();
+
+            cmSelCategory = new SqlCommand();
+
+
+            cmSelCarbyPK.CommandText = "SELECT PlateNum, Category, Model, Color, EngineSN, Status" 
+                + " FROM VehiclePlateNum, Car WHERE VehiclePlateNum.PlateNum = Car.CarPlateNum" 
+                + " AND VehiclePlateNum.PlateNum = @platenum";
+            cmSelCarbyPK.Connection = cn;
+
+            cmSelTruckbyPK.CommandText = "SELECT PlateNum, Category, Model, Color, EngineSN, Status"
+                + " FROM VehiclePlateNum, Truck WHERE VehiclePlateNum.PlateNum = Truck.TruckPlateNum"
+                + " AND VehiclePlateNum.PlateNum = @PlateNum";
+            cmSelTruckbyPK.Connection = cn;
+
+            cmSelBusbyPK.CommandText = "SELECT PlateNum, Category, Model, Color, EngineSN, Status"
+                + " FROM VehiclePlateNum, Bus WHERE VehiclePlateNum.PlateNum = Bus.BusPlateNum"
+                + " AND VehiclePlateNum.PlateNum = @PlateNum";
+            cmSelBusbyPK.Connection = cn;
+
+            cmSelCarAvailable.CommandText = "SELECT * FROM Car WHERE Status = 'Available'";
+            cmSelCarAvailable.Connection = cn;
+
+            cmSelTruckAvailable.CommandText = "SELECT * FROM Truck WHERE Status = 'Available'";
+            cmSelTruckAvailable.Connection = cn;
+
+            cmSelBusAvailable.CommandText = "SELECT * FROM Bus WHERE Status = 'Available'";
+            cmSelBusAvailable.Connection = cn;
+
+            cmSelCategory.CommandText = "SELECT Category From VehicleCategory";
+            cmSelCategory.Connection = cn;
         }
 
-        private static VehicleDAO getInstance()
+        public static VehicleDAO Instance
         {
-            if(dbInstance == null)
+            get
             {
-                dbInstance = new VehicleDAO();
-            }
+                if (dbInstance == null)
+                {
+                    dbInstance = new VehicleDAO();
+                }
 
-            return dbInstance;
+                return dbInstance;
+            }
         }
 
         public void OpenConnection()
@@ -113,6 +153,64 @@ namespace SA45TEAM07_VEHICLE
             adapter.Fill(ds, tableName);
 
             return ds.Tables[tableName];
+        }
+
+        public Vehicle RetrieveVehicle(string plateNum)
+        {
+            SqlParameter pPlateNum = new SqlParameter("@PlateNum", SqlDbType.NVarChar, 7);
+            pPlateNum.Value = plateNum;
+
+            // clear any previous parameters set before adding new parameters
+            cmSelCarbyPK.Parameters.Clear();
+            cmSelCarbyPK.Parameters.Add(pPlateNum);
+
+            Vehicle v = new Vehicle();
+
+            // execute reader
+            SqlDataReader rd = cmSelCarbyPK.ExecuteReader();
+            if (rd.Read())
+            {
+                v.Model = rd["Model"].ToString();
+                v.PlateNum = rd["PlateNum"].ToString();
+                v.Color = rd["Color"].ToString();
+                v.EngineSN = rd["EngineSN"].ToString();
+            }
+            else
+            {
+                throw new VehicleException(VehicleMessage.VehicleRecordNotFound);
+            }
+
+            // close reader
+            rd.Close();
+            return v;
+
+        }
+
+        public List<string> RetrieveCategoryList()
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter(cmSelCategory);
+
+            List<string> output = new List<string>();
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+            DataTable table = ds.Tables[0];
+            output = table.AsEnumerable().Select(x => x.Field<string>("Category")).ToList();
+
+            return output;
+        }
+
+        [STAThread]
+        static void Main(string[] args)
+        {
+            VehicleDAO vehicleDAO = VehicleDAO.Instance;
+            vehicleDAO.OpenConnection();
+
+            Vehicle v = vehicleDAO.RetrieveVehicle("BSS031E");
+            vehicleDAO.CloseConnection();
+
+
+            Console.WriteLine(v.PlateNum);
+            Console.ReadLine();
         }
     }
 }
