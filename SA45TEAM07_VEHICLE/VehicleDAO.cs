@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace SA45TEAM07_VEHICLE
 {
-    class VehicleDAO
+    public class VehicleDAO
     {
         public const int CAR = 0;
         public const int TRUCK = 1;
@@ -49,9 +49,9 @@ namespace SA45TEAM07_VEHICLE
             cmSelCategory = new SqlCommand();
 
 
-            cmSelCarbyPK.CommandText = "SELECT PlateNum, Category, Model, Color, EngineSN, Status" 
-                + " FROM VehiclePlateNum, Car WHERE VehiclePlateNum.PlateNum = Car.CarPlateNum" 
-                + " AND VehiclePlateNum.PlateNum = @platenum";
+            cmSelCarbyPK.CommandText = "SELECT PlateNum, Category, Model, Color, EngineSN, Status"
+                + " FROM VehiclePlateNum, Car WHERE VehiclePlateNum.PlateNum = Car.CarPlateNum"
+                + " AND VehiclePlateNum.PlateNum = @Platenum";
             cmSelCarbyPK.Connection = cn;
 
             cmSelTruckbyPK.CommandText = "SELECT PlateNum, Category, Model, Color, EngineSN, Status"
@@ -157,32 +157,70 @@ namespace SA45TEAM07_VEHICLE
 
         public Vehicle RetrieveVehicle(string plateNum)
         {
-            SqlParameter pPlateNum = new SqlParameter("@PlateNum", SqlDbType.NVarChar, 7);
-            pPlateNum.Value = plateNum;
+            SqlParameter pCarPlateNum = new SqlParameter("@PlateNum", SqlDbType.NVarChar, 7);
+            pCarPlateNum.Value = plateNum;
+
+            SqlParameter pTruckPlateNum = new SqlParameter("@PlateNum", SqlDbType.NVarChar, 7);
+            pTruckPlateNum.Value = plateNum;
+
+            SqlParameter pBusPlateNum = new SqlParameter("@PlateNum", SqlDbType.NVarChar, 7);
+            pBusPlateNum.Value = plateNum;
 
             // clear any previous parameters set before adding new parameters
             cmSelCarbyPK.Parameters.Clear();
-            cmSelCarbyPK.Parameters.Add(pPlateNum);
+            cmSelCarbyPK.Parameters.Add(pCarPlateNum);
+
+            cmSelTruckbyPK.Parameters.Clear();
+            cmSelTruckbyPK.Parameters.Add(pTruckPlateNum);
+
+            cmSelBusbyPK.Parameters.Clear();
+            cmSelBusbyPK.Parameters.Add(pBusPlateNum);
 
             Vehicle v = new Vehicle();
 
             // execute reader
-            SqlDataReader rd = cmSelCarbyPK.ExecuteReader();
-            if (rd.Read())
+            SqlDataReader rdCar = cmSelCarbyPK.ExecuteReader();
+
+            if (rdCar.Read())
             {
-                v.Model = rd["Model"].ToString();
-                v.PlateNum = rd["PlateNum"].ToString();
-                v.Color = rd["Color"].ToString();
-                v.EngineSN = rd["EngineSN"].ToString();
+                v.Model = rdCar["Model"].ToString();
+                v.PlateNum = rdCar["PlateNum"].ToString();
+                v.Color = rdCar["Color"].ToString();
+                v.EngineSN = rdCar["EngineSN"].ToString();
+
+                rdCar.Close();
+                return v;
+            }
+            rdCar.Close();
+
+            SqlDataReader rdTruck = cmSelTruckbyPK.ExecuteReader();
+            if (rdTruck.Read())
+            {
+                v.Model = rdTruck["Model"].ToString();
+                v.PlateNum = rdTruck["PlateNum"].ToString();
+                v.Color = rdTruck["Color"].ToString();
+                v.EngineSN = rdTruck["EngineSN"].ToString();
+
+                rdTruck.Close();
+                return v;
+            }
+            rdTruck.Close();
+
+            SqlDataReader rdBus = cmSelBusbyPK.ExecuteReader();
+            if (rdBus.Read())
+            {
+                v.Model = rdBus["Model"].ToString();
+                v.PlateNum = rdBus["PlateNum"].ToString();
+                v.Color = rdBus["Color"].ToString();
+                v.EngineSN = rdBus["EngineSN"].ToString();
+
+                rdBus.Close();
+                return v;
             }
             else
             {
                 throw new VehicleException(VehicleMessage.VehicleRecordNotFound);
             }
-
-            // close reader
-            rd.Close();
-            return v;
 
         }
 

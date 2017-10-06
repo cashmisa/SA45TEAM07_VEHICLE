@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SA45TEAM07_VEHICLE
 {
-    class Truck
+    public class Truck: Vehicle
     {
         int maxCargo;
         int wheelQty;
