@@ -16,7 +16,10 @@ namespace SA45TEAM07_VEHICLE
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+
+            MainControl mainControl = new MainControl();
+
+            //Application.Run(new frmMain());
         }
     }
 }

@@ -12,14 +12,29 @@ namespace SA45TEAM07_VEHICLE
 {
     public partial class frmMain : BaseForm
     {
+        private MainControl mainControl;
 
         public frmMain()
         {
             InitializeComponent();
         }
 
+        public frmMain(MainControl mainControl) : this()
+        {
+            this.mainControl = mainControl;
+        }
+
+        public MainControl MainControl
+        {
+            get
+            {
+                return mainControl;
+            }
+        }
+
         private void enquireStatusToolStripMenuItem_Click(object sender, EventArgs e)
         {
+           
         }
     }
 }
