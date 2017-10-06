@@ -55,7 +55,10 @@ namespace SA45TEAM07_VEHICLE
 
         public void initialiseRentControl()
         {
-            this.rentControl = new RentVehicleControl(this);
+            if (this.rentControl == null)
+            {
+                this.rentControl = new RentVehicleControl(this);
+            }
         }
 
         public void closeUseCase(EnquireVehicleStatusControl enquiryControl)

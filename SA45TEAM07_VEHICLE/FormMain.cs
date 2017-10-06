@@ -46,5 +46,10 @@ namespace SA45TEAM07_VEHICLE
         {
             mainControl.initialiseEnquiryControl();        
         }
+
+        private void rentVehicleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mainControl.initialiseRentControl();
+        }
     }
 }

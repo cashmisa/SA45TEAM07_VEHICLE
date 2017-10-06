@@ -24,9 +24,14 @@ namespace SA45TEAM07_VEHICLE
             this.rentvehiclecontrol = rentvehiclecontrol;
         }
 
+        internal void displayCategorySearchUI()
+        {
+            this.Show();
+        }
+
         private void btnRetreive_Click(object sender, EventArgs e)
         {
-            rentvehiclecontrol.SelectCategory();
+            
         }
 
         private void btnRent_Click(object sender, EventArgs e)
@@ -37,6 +42,14 @@ namespace SA45TEAM07_VEHICLE
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public void displayCategory(List<string> vehiclecategory)
+        {
+            foreach(var veh in vehiclecategory)
+            {
+                this.lbxCategory.Items.Add(veh);
+            }
         }
     }
 }
