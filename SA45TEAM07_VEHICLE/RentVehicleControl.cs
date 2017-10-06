@@ -53,6 +53,13 @@ namespace SA45TEAM07_VEHICLE
             }
         }
 
+        internal void retrieveCustomerDetails(string NRIC)
+        {
+            ///create a customer object, 
+            //
+
+        }
+
         public RentVehicleControl(MainControl mainControl)
         {
             this.MainControl = mainControl;
@@ -60,7 +67,6 @@ namespace SA45TEAM07_VEHICLE
             FormCategorySearch.displayCategorySearchUI();
             List<string> vehicleCategory = VehicleDAO.Instance.RetrieveCategoryList();//retrieve via DAO
             FormCategorySearch.displayCategory(vehicleCategory);
-
         }
 
         public void SelectCategory(string category)
@@ -98,7 +104,8 @@ namespace SA45TEAM07_VEHICLE
         public void SelectVehicle(string plateNum)
         {
             FormRentDetails = new FormRentDetails(this);
-            FormRentDetails.displayRentalDetails();
+            FormRentDetails.displayRentalDetails(plateNum);
+            
 
             //keep this plateNum, create a transaction, add this plate number
             //take customer, add into this transaction object's attribute value

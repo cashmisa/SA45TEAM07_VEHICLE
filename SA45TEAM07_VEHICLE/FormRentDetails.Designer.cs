@@ -29,48 +29,59 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txbNRIC = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.statusStripRentRecordStatus = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelRentalStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelRentInfo = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
+            this.statusStripRentRecordStatus.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.textBox4);
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txbNRIC);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(39, 29);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(504, 222);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Details";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(348, 38);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 16;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // textBox4
             // 
@@ -96,12 +107,12 @@
             this.textBox2.Size = new System.Drawing.Size(226, 23);
             this.textBox2.TabIndex = 13;
             // 
-            // textBox1
+            // txbNRIC
             // 
-            this.textBox1.Location = new System.Drawing.Point(197, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(141, 23);
-            this.textBox1.TabIndex = 12;
+            this.txbNRIC.Location = new System.Drawing.Point(197, 37);
+            this.txbNRIC.Name = "txbNRIC";
+            this.txbNRIC.Size = new System.Drawing.Size(141, 23);
+            this.txbNRIC.TabIndex = 12;
             // 
             // label4
             // 
@@ -139,15 +150,6 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "NRIC/FIN:";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(348, 38);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label6);
@@ -160,24 +162,6 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Rental Info";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(197, 44);
-            this.dateTimePicker1.MinDate = new System.DateTime(2017, 10, 6, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(226, 23);
-            this.dateTimePicker1.TabIndex = 0;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(57, 52);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 15);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Rent Date:";
             // 
             // label6
             // 
@@ -197,6 +181,24 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(226, 23);
             this.dateTimePicker2.TabIndex = 18;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(57, 52);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(75, 15);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Rent Date:";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(197, 44);
+            this.dateTimePicker1.MinDate = new System.DateTime(2017, 10, 6, 0, 0, 0, 0);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(226, 23);
+            this.dateTimePicker1.TabIndex = 0;
+            // 
             // btnConfirm
             // 
             this.btnConfirm.Location = new System.Drawing.Point(144, 430);
@@ -215,40 +217,46 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
-            // statusStrip1
+            // statusStripRentRecordStatus
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabelRentalStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 488);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(586, 22);
-            this.statusStrip1.TabIndex = 11;
-            this.statusStrip1.Text = "statusStrip1";
+            this.statusStripRentRecordStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabelRentalStatus,
+            this.toolStripStatusLabelRentInfo});
+            this.statusStripRentRecordStatus.Location = new System.Drawing.Point(0, 488);
+            this.statusStripRentRecordStatus.Name = "statusStripRentRecordStatus";
+            this.statusStripRentRecordStatus.Size = new System.Drawing.Size(586, 22);
+            this.statusStripRentRecordStatus.TabIndex = 11;
+            this.statusStripRentRecordStatus.Text = "statusStrip1";
             // 
             // toolStripStatusLabelRentalStatus
             // 
             this.toolStripStatusLabelRentalStatus.Name = "toolStripStatusLabelRentalStatus";
             this.toolStripStatusLabelRentalStatus.Size = new System.Drawing.Size(0, 17);
             // 
-            // fmRentDetailsUI
+            // toolStripStatusLabelRentInfo
+            // 
+            this.toolStripStatusLabelRentInfo.Name = "toolStripStatusLabelRentInfo";
+            this.toolStripStatusLabelRentInfo.Size = new System.Drawing.Size(0, 17);
+            // 
+            // FormRentDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(586, 510);
-            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.statusStripRentRecordStatus);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "fmRentDetailsUI";
-            this.Text = "Rent";
+            this.Name = "FormRentDetails";
+            this.Text = "Rent Details";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            this.statusStripRentRecordStatus.ResumeLayout(false);
+            this.statusStripRentRecordStatus.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,12 +268,12 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txbNRIC;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
@@ -273,7 +281,8 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.StatusStrip statusStripRentRecordStatus;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelRentalStatus;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelRentInfo;
     }
 }

@@ -23,9 +23,15 @@ namespace SA45TEAM07_VEHICLE
             this.rentvehiclecontrol = rentvehiclecontrol;
         }
 
-        internal void displayRentalDetails()
+        internal void displayRentalDetails(string plateNum)
         {
             this.Show();
+            toolStripStatusLabelRentInfo.Text = "Vehicle selected: " + plateNum;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            rentvehiclecontrol.retrieveCustomerDetails(txbNRIC.Text.Trim());
         }
     }
 }
