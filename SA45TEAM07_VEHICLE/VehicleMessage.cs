@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SA45TEAM07_VEHICLE
 {
-    class VehicleDAO
+    class VehicleMessage
     {
 
     }

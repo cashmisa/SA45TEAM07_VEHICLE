@@ -88,6 +88,9 @@
       <DependentUpon>FormSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="VehicleDAO.cs" />
+    <Compile Include="VehicleException.cs" />
+    <Compile Include="VehicleMessage.cs" />
+    <Compile Include="VehicleUtility.cs" />
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>

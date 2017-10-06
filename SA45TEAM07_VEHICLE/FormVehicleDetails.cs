@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SA45TEAM07_VEHICLE
 {
-    public partial class fmRentleReturn : BaseForm
+    public partial class FormVehicleDetails : BaseForm
     {
-        public fmRentleReturn()
+        public FormVehicleDetails()
         {
             InitializeComponent();
         }
