@@ -43,5 +43,10 @@ namespace SA45TEAM07_VEHICLE
         {
             enquiryControl.close(this);
         }
+
+        private void FormVehicleDetails_Load(object sender, EventArgs e)
+        {
+            enquiryControl.close(this);
+        }
     }
 }

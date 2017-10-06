@@ -45,5 +45,6 @@ namespace SA45TEAM07_VEHICLE
         {
             enquiryControl.closeUseCase();
         }
+
     }
 }

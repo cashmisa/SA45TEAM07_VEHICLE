@@ -28,66 +28,68 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.lbxCategory = new System.Windows.Forms.ListBox();
             this.btnRetreive = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewAvailableVehicles = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.gbxCategory = new System.Windows.Forms.GroupBox();
             this.btnRent = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAvailableVehicles)).BeginInit();
             this.gbxCategory.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // btnClose
             // 
-            this.button1.Location = new System.Drawing.Point(471, 589);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 37);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Close";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnClose.Location = new System.Drawing.Point(377, 491);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(106, 31);
+            this.btnClose.TabIndex = 12;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lbxCategory
             // 
             this.lbxCategory.FormattingEnabled = true;
-            this.lbxCategory.ItemHeight = 18;
-            this.lbxCategory.Location = new System.Drawing.Point(207, 31);
-            this.lbxCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbxCategory.ItemHeight = 15;
+            this.lbxCategory.Location = new System.Drawing.Point(166, 26);
             this.lbxCategory.Name = "lbxCategory";
-            this.lbxCategory.Size = new System.Drawing.Size(294, 76);
+            this.lbxCategory.Size = new System.Drawing.Size(236, 64);
             this.lbxCategory.TabIndex = 13;
             // 
             // btnRetreive
             // 
-            this.btnRetreive.Location = new System.Drawing.Point(566, 48);
-            this.btnRetreive.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRetreive.Location = new System.Drawing.Point(453, 40);
             this.btnRetreive.Name = "btnRetreive";
-            this.btnRetreive.Size = new System.Drawing.Size(133, 37);
+            this.btnRetreive.Size = new System.Drawing.Size(106, 31);
             this.btnRetreive.TabIndex = 14;
             this.btnRetreive.Text = "Retreive";
             this.btnRetreive.UseVisualStyleBackColor = true;
             this.btnRetreive.Click += new System.EventHandler(this.btnRetreive_Click);
             // 
-            // dataGridView1
+            // dataGridViewAvailableVehicles
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(39, 175);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(730, 385);
-            this.dataGridView1.TabIndex = 16;
+            this.dataGridViewAvailableVehicles.AllowUserToAddRows = false;
+            this.dataGridViewAvailableVehicles.AllowUserToDeleteRows = false;
+            this.dataGridViewAvailableVehicles.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewAvailableVehicles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAvailableVehicles.Location = new System.Drawing.Point(32, 141);
+            this.dataGridViewAvailableVehicles.Name = "dataGridViewAvailableVehicles";
+            this.dataGridViewAvailableVehicles.ReadOnly = true;
+            this.dataGridViewAvailableVehicles.RowHeadersWidth = 4;
+            this.dataGridViewAvailableVehicles.RowTemplate.Height = 23;
+            this.dataGridViewAvailableVehicles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewAvailableVehicles.Size = new System.Drawing.Size(584, 321);
+            this.dataGridViewAvailableVehicles.TabIndex = 16;
+            this.dataGridViewAvailableVehicles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAvailableVehicles_CellContentClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 54);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(19, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 19);
+            this.label1.Size = new System.Drawing.Size(110, 15);
             this.label1.TabIndex = 17;
             this.label1.Text = "Select category:";
             // 
@@ -96,20 +98,17 @@
             this.gbxCategory.Controls.Add(this.label1);
             this.gbxCategory.Controls.Add(this.btnRetreive);
             this.gbxCategory.Controls.Add(this.lbxCategory);
-            this.gbxCategory.Location = new System.Drawing.Point(39, 14);
-            this.gbxCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxCategory.Location = new System.Drawing.Point(31, 12);
             this.gbxCategory.Name = "gbxCategory";
-            this.gbxCategory.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gbxCategory.Size = new System.Drawing.Size(731, 136);
+            this.gbxCategory.Size = new System.Drawing.Size(585, 113);
             this.gbxCategory.TabIndex = 18;
             this.gbxCategory.TabStop = false;
             // 
             // btnRent
             // 
-            this.btnRent.Location = new System.Drawing.Point(193, 589);
-            this.btnRent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRent.Location = new System.Drawing.Point(154, 491);
             this.btnRent.Name = "btnRent";
-            this.btnRent.Size = new System.Drawing.Size(133, 37);
+            this.btnRent.Size = new System.Drawing.Size(106, 31);
             this.btnRent.TabIndex = 19;
             this.btnRent.Text = "Rent";
             this.btnRent.UseVisualStyleBackColor = true;
@@ -117,17 +116,18 @@
             // 
             // FormCategorySearch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(821, 642);
+            this.ClientSize = new System.Drawing.Size(657, 543);
             this.Controls.Add(this.btnRent);
             this.Controls.Add(this.gbxCategory);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Controls.Add(this.dataGridViewAvailableVehicles);
+            this.Controls.Add(this.btnClose);
+            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "FormCategorySearch";
             this.Text = "Find Available Vehicles";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormCategorySearch_FormClosed);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAvailableVehicles)).EndInit();
             this.gbxCategory.ResumeLayout(false);
             this.gbxCategory.PerformLayout();
             this.ResumeLayout(false);
@@ -136,10 +136,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.ListBox lbxCategory;
         private System.Windows.Forms.Button btnRetreive;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewAvailableVehicles;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox gbxCategory;
         private System.Windows.Forms.Button btnRent;

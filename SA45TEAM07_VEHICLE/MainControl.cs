@@ -69,7 +69,8 @@ namespace SA45TEAM07_VEHICLE
 
         public void closeUseCase(RentVehicleControl rentControl)
         {
-
+            rentControl.destroy();
+            this.rentControl = null;
         }
     }
 }

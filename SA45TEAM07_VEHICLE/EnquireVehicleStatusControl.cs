@@ -44,7 +44,6 @@ namespace SA45TEAM07_VEHICLE
             {
                 VehicleDAO.Instance.OpenConnection();       
                 Vehicle vehicle = VehicleDAO.Instance.RetrieveVehicle(plateNum);
-               
                 vehicleDetailUI = new FormVehicleDetails(this);
                 vehicleDetailUI.displayVehicleDetailUI(vehicle);
             }

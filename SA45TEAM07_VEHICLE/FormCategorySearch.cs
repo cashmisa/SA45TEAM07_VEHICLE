@@ -31,17 +31,23 @@ namespace SA45TEAM07_VEHICLE
 
         private void btnRetreive_Click(object sender, EventArgs e)
         {
-            
+            rentvehiclecontrol.SelectCategory(lbxCategory.SelectedItem.ToString());
         }
 
         private void btnRent_Click(object sender, EventArgs e)
         {
-            rentvehiclecontrol.SelectVehicle();
+            rentButtonClicked();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
+            rentvehiclecontrol.close(this);
+            rentvehiclecontrol.closeUseCase();
+        }
 
+        private void FormCategorySearch_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            rentvehiclecontrol.closeUseCase();
         }
 
         public void displayCategory(List<string> vehiclecategory)
@@ -52,5 +58,36 @@ namespace SA45TEAM07_VEHICLE
             //    this.lbxCategory.Items.Add(veh);
             //}
         }
+
+        internal void displayAvailableVehicle(DataTable dt)
+        {
+            dataGridViewAvailableVehicles.DataSource = dt;
+        }
+
+        /// <summary>
+        /// need to add how to keep this plateNum info
+        /// </summary>
+
+        private void rentButtonClicked()
+        {
+            string plateNum = "";
+            if (dataGridViewAvailableVehicles.SelectedCells.Count > 0)
+            {
+                int a = dataGridViewAvailableVehicles.SelectedCells[0].RowIndex;
+                plateNum = dataGridViewAvailableVehicles.Rows[a].Cells[0].Value.ToString();
+            }
+
+            //Rent button is grayed out
+            //only after a selection is made,
+
+            rentvehiclecontrol.SelectVehicle(plateNum);
+        }
+
+        private void dataGridViewAvailableVehicles_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            rentButtonClicked();
+        }
+
+        
     }
 }

@@ -22,6 +22,10 @@ namespace SA45TEAM07_VEHICLE
         {
             this.rentvehiclecontrol = rentvehiclecontrol;
         }
-        
+
+        internal void displayRentalDetails()
+        {
+            this.Show();
+        }
     }
 }
