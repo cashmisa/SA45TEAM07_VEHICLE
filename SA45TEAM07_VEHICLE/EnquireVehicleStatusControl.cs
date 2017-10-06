@@ -34,6 +34,27 @@ namespace SA45TEAM07_VEHICLE
             }
         }
 
+        public void retrieveVehicle(string plateNum)
+        {
+
+        }
+
+
+        public void close()
+        {
+
+        }
+
+        public void closeUseCase()
+        {
+
+        }
+
+        public void destroy()
+        {
+
+        }
+
 
 
 

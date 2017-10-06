@@ -17,7 +17,7 @@ namespace SA45TEAM07_VEHICLE
             if (PortalUI == null)
             {
                 PortalUI = new frmMain(this);
-                PortalUI.ShowDialog();
+                PortalUI.displayPortalUI();
             }
         }
 
@@ -47,10 +47,6 @@ namespace SA45TEAM07_VEHICLE
             {
                 return rentControl;
             }
-            set
-            {
-                rentControl = value;
-            }
         }
 
         public void initialiseEnquiryControl()
@@ -58,5 +54,19 @@ namespace SA45TEAM07_VEHICLE
             this.enquiryControl = new EnquireVehicleStatusControl(this);
         }
 
+        public void initialiseRentControl()
+        {
+            this.rentControl = new RentVehicleControl(this);
+        }
+
+        public void closeUseCase(EnquireVehicleStatusControl enquiryControl)
+        {
+
+        }
+
+        public void closeUseCase(RentVehicleControl rentControl)
+        {
+
+        }
     }
 }

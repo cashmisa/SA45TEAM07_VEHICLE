@@ -8,7 +8,12 @@ namespace SA45TEAM07_VEHICLE
 {
     public class RentVehicleControl
     {
+        private MainControl mainControl;
 
+        public RentVehicleControl(MainControl mainControl)
+        {
+            this.mainControl = mainControl;
+        }
 
     }
 }
