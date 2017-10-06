@@ -19,7 +19,7 @@ namespace SA45TEAM07_VEHICLE
 
             MainControl mainControl = new MainControl();
 
-            //Application.Run(new frmMain());
+            //Application.Run(new FormMain());
         }
     }
 }
