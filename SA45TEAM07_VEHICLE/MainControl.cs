@@ -14,10 +14,10 @@ namespace SA45TEAM07_VEHICLE
 
         public MainControl()
         {
-            if (PortalUI == null)
+            if (portalUI == null)
             {
-                PortalUI = new FormMain(this);
-                PortalUI.displayPortalUI();
+                portalUI = new FormMain(this);
+                portalUI.displayPortalUI();
             }
         }
 
@@ -26,10 +26,6 @@ namespace SA45TEAM07_VEHICLE
             get
             {
                 return portalUI;
-            }
-            set
-            {
-                portalUI = value;
             }
         }
 
@@ -51,7 +47,10 @@ namespace SA45TEAM07_VEHICLE
 
         public void initialiseEnquiryControl()
         {
-            this.enquiryControl = new EnquireVehicleStatusControl(this);
+            if(this.enquiryControl == null)
+            {
+                this.enquiryControl = new EnquireVehicleStatusControl(this);
+            }
         }
 
         public void initialiseRentControl()
@@ -61,7 +60,8 @@ namespace SA45TEAM07_VEHICLE
 
         public void closeUseCase(EnquireVehicleStatusControl enquiryControl)
         {
-
+            enquiryControl.destroy();
+            this.enquiryControl = null;
         }
 
         public void closeUseCase(RentVehicleControl rentControl)
