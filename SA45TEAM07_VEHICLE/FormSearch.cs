@@ -32,7 +32,7 @@ namespace SA45TEAM07_VEHICLE
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            enquiryControl.retrieveVehicle("test");
+            enquiryControl.retrieveVehicle(textBox1.Text);
         }
 
         private void button1_Click(object sender, EventArgs e)

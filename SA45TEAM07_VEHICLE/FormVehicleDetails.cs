@@ -24,6 +24,15 @@ namespace SA45TEAM07_VEHICLE
             this.enquiryControl = enquiryControl;
         }
 
+        public void displayVehicleDetail(Vehicle vehicle)
+        {
+            txbModel.Text = vehicle.Model;
+            txbColor.Text = vehicle.Color;
+            txbPlateNum.Text = vehicle.PlateNum;
+            txbEngineSerialNo.Text = vehicle.EngineSN;
+            txbStatus.Text = vehicle.Status;
+        }
+
         public void displayVehicleDetailUI()
         {
             this.ShowDialog();
