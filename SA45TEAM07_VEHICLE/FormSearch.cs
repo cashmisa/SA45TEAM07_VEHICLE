@@ -29,5 +29,10 @@ namespace SA45TEAM07_VEHICLE
         {
             this.Show();
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            enquiryControl.retrieveVehicle("test");
+        }
     }
 }

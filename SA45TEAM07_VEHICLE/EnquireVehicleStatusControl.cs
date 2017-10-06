@@ -8,8 +8,9 @@ namespace SA45TEAM07_VEHICLE
 {
     public class EnquireVehicleStatusControl
     {
-        private FormSearch searchUI;
         private MainControl mainControl;
+        private FormSearch searchUI;
+        private FormVehicleDetails vehicleDetailUI;
 
         public EnquireVehicleStatusControl(MainControl mainControl)
         {
@@ -38,7 +39,9 @@ namespace SA45TEAM07_VEHICLE
 
         public void retrieveVehicle(string plateNum)
         {
+            vehicleDetailUI = new FormVehicleDetails(this);
 
+            vehicleDetailUI.displayVehicleDetailUI();
         }
 
 

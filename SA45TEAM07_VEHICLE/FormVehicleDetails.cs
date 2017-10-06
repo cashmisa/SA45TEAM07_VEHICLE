@@ -12,9 +12,21 @@ namespace SA45TEAM07_VEHICLE
 {
     public partial class FormVehicleDetails : BaseForm
     {
+        private EnquireVehicleStatusControl enquiryControl;
+
         public FormVehicleDetails()
         {
             InitializeComponent();
+        }
+
+        public FormVehicleDetails(EnquireVehicleStatusControl enquiryControl) : this()
+        {
+            this.enquiryControl = enquiryControl;
+        }
+
+        public void displayVehicleDetailUI()
+        {
+            this.ShowDialog();
         }
     }
 }
