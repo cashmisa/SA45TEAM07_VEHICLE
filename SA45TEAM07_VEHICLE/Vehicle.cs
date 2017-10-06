@@ -14,10 +14,69 @@ namespace SA45TEAM07_VEHICLE
         string status = "available";
         string plateNum;
 
-        public string Model { get => model; set => model = value; }
-        public string Color { get => color; set => color = value; }
-        public string EngineSN { get => engineSN; set => engineSN = value; }
-        public string Status { get => status; set => status = value; }
-        public string PlateNum { get => plateNum; set => plateNum = value; }
+        public string Model
+        {
+            get
+            {
+                return model;
+            }
+
+            set
+            {
+                model = value;
+            }
+        }
+
+        public string Color
+        {
+            get
+            {
+                return color;
+            }
+
+            set
+            {
+                color = value;
+            }
+        }
+
+        public string EngineSN
+        {
+            get
+            {
+                return engineSN;
+            }
+
+            set
+            {
+                engineSN = value;
+            }
+        }
+
+        public string Status
+        {
+            get
+            {
+                return status;
+            }
+
+            set
+            {
+                status = value;
+            }
+        }
+
+        public string PlateNum
+        {
+            get
+            {
+                return plateNum;
+            }
+
+            set
+            {
+                plateNum = value;
+            }
+        }
     }
 }
