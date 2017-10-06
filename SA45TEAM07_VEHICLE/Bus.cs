@@ -11,7 +11,30 @@ namespace SA45TEAM07_VEHICLE
         int maxPassenger;
         int tvQty;
 
-        public int MaxPassenger { get => maxPassenger; set => maxPassenger = value; }
-        public int TvQty { get => tvQty; set => tvQty = value; }
+        public int MaxPassenger
+        {
+            get
+            {
+                return maxPassenger;
+            }
+
+            set
+            {
+                maxPassenger = value;
+            }
+        }
+
+        public int TvQty
+        {
+            get
+            {
+                return tvQty;
+            }
+
+            set
+            {
+                tvQty = value;
+            }
+        }
     }
 }

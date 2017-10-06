@@ -11,7 +11,30 @@ namespace SA45TEAM07_VEHICLE
         int maxCargo;
         int wheelQty;
 
-        public int MaxCargo { get => maxCargo; set => maxCargo = value; }
-        public int WheelQty { get => wheelQty; set => wheelQty = value; }
+        public int MaxCargo
+        {
+            get
+            {
+                return maxCargo;
+            }
+
+            set
+            {
+                maxCargo = value;
+            }
+        }
+
+        public int WheelQty
+        {
+            get
+            {
+                return wheelQty;
+            }
+
+            set
+            {
+                wheelQty = value;
+            }
+        }
     }
 }
