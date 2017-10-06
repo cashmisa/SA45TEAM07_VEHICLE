@@ -12,13 +12,13 @@ namespace SA45TEAM07_VEHICLE
             = "T07001E Services not available. Please contact helpdesk.";
 
         public const String VehicleRecordNotFound
-            = "DFT012E Vehicle record not found.  Please enter another plate number.";
+            = "T07012E Vehicle record not found.  Please enter another plate number.";
 
         public const String CustomerRecordNotFound
-            = "DFT013E Customer record not found.  Please enter another NRIC/FIN.";
+            = "T07013E Customer record not found.  Please enter another NRIC/FIN.";
 
         public const String CustomerRecordSuccessful
-            = "DFT099I Rental record successfully created!";
+            = "T07099I Rental record successfully created!";
 
     }
 }
