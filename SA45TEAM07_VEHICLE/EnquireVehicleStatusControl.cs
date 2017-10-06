@@ -16,7 +16,7 @@ namespace SA45TEAM07_VEHICLE
         {
             this.mainControl = mainControl;
             this.searchUI = new FormSearch(this);
-            searchUI.displaySearchUI();
+            this.searchUI.displaySearchUI();
         }
 
         public MainControl MainControl
@@ -39,6 +39,10 @@ namespace SA45TEAM07_VEHICLE
 
         public void retrieveVehicle(string plateNum)
         {
+
+
+
+            // need to pass in Vehicle as parameter
             vehicleDetailUI = new FormVehicleDetails(this);
 
             // if succesful
