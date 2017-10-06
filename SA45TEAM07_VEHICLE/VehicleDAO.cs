@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace SA45TEAM07_VEHICLE
 {
-    class VehicleDAO
+    public class VehicleDAO
     {
         public const int CAR = 0;
         public const int TRUCK = 1;
