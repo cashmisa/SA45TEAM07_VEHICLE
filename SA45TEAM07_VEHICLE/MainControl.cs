@@ -57,7 +57,7 @@ namespace SA45TEAM07_VEHICLE
 
         public void closeUseCase(EnquireVehicleStatusControl enquiryControl)
         {
-
+            this.enquiryControl = null;
         }
 
         public void closeUseCase(RentVehicleControl rentControl)
