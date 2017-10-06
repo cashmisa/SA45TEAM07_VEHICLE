@@ -19,7 +19,7 @@ namespace SA45TEAM07_VEHICLE
             InitializeComponent();
         }
 
-        public FormSearch(EnquireVehicleStatusControl enquiryControl)
+        public FormSearch(EnquireVehicleStatusControl enquiryControl) : this()
         {
             this.enquiryControl = enquiryControl;
             this.MdiParent = enquiryControl.MainControl.PortalUI;

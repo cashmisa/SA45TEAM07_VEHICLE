@@ -14,12 +14,8 @@ namespace SA45TEAM07_VEHICLE
         public EnquireVehicleStatusControl(MainControl mainControl)
         {
             this.mainControl = mainControl;
-
-            if (searchUI == null)
-            {
-                searchUI = new FormSearch(this);
-                searchUI.displaySearchUI();
-            }   
+            this.searchUI = new FormSearch(this);
+            searchUI.displaySearchUI(); 
         }
 
         public MainControl MainControl
