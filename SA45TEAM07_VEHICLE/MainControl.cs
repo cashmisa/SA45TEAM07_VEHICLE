@@ -39,11 +39,6 @@ namespace SA45TEAM07_VEHICLE
             {
                 return enquiryControl;
             }
-
-            set
-            {
-                enquiryControl = value;
-            }
         }
 
         public RentVehicleControl RentControl
@@ -56,6 +51,11 @@ namespace SA45TEAM07_VEHICLE
             {
                 rentControl = value;
             }
+        }
+
+        public void initialiseEnquiryControl()
+        {
+            this.enquiryControl = new EnquireVehicleStatusControl(this);
         }
 
     }
