@@ -16,7 +16,7 @@ namespace SA45TEAM07_VEHICLE
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSearchUI());
+            Application.Run(new frmMain());
         }
     }
 }
