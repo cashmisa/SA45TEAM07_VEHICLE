@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SA45TEAM07_VEHICLE
 {
-    class Car : Vehicle
+    public class Car : Vehicle
     {
         int maxSeat;
         string carType;
