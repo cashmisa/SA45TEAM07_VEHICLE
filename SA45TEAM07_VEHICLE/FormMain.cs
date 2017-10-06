@@ -17,5 +17,9 @@ namespace SA45TEAM07_VEHICLE
         {
             InitializeComponent();
         }
+
+        private void enquireStatusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
     }
 }
