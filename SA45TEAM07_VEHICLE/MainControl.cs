@@ -47,7 +47,10 @@ namespace SA45TEAM07_VEHICLE
 
         public void initialiseEnquiryControl()
         {
-            this.enquiryControl = new EnquireVehicleStatusControl(this);
+            if(this.enquiryControl == null)
+            {
+                this.enquiryControl = new EnquireVehicleStatusControl(this);
+            }
         }
 
         public void initialiseRentControl()
@@ -57,6 +60,7 @@ namespace SA45TEAM07_VEHICLE
 
         public void closeUseCase(EnquireVehicleStatusControl enquiryControl)
         {
+            enquiryControl.destroy();
             this.enquiryControl = null;
         }
 
