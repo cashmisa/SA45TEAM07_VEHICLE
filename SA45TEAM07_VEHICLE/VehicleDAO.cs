@@ -187,6 +187,7 @@ namespace SA45TEAM07_VEHICLE
                 v.PlateNum = rdCar["PlateNum"].ToString();
                 v.Color = rdCar["Color"].ToString();
                 v.EngineSN = rdCar["EngineSN"].ToString();
+                v.Status = rdCar["Status"].ToString();
 
                 rdCar.Close();
                 return v;
@@ -200,6 +201,7 @@ namespace SA45TEAM07_VEHICLE
                 v.PlateNum = rdTruck["PlateNum"].ToString();
                 v.Color = rdTruck["Color"].ToString();
                 v.EngineSN = rdTruck["EngineSN"].ToString();
+                v.Status = rdTruck["Status"].ToString();
 
                 rdTruck.Close();
                 return v;
@@ -213,14 +215,15 @@ namespace SA45TEAM07_VEHICLE
                 v.PlateNum = rdBus["PlateNum"].ToString();
                 v.Color = rdBus["Color"].ToString();
                 v.EngineSN = rdBus["EngineSN"].ToString();
-
-                rdBus.Close();
-                return v;
+                v.Status = rdBus["Status"].ToString();
             }
             else
             {
                 throw new VehicleException(VehicleMessage.VehicleRecordNotFound);
             }
+
+            rdBus.Close();
+            return v;
 
         }
 
@@ -243,7 +246,7 @@ namespace SA45TEAM07_VEHICLE
             VehicleDAO vehicleDAO = VehicleDAO.Instance;
             vehicleDAO.OpenConnection();
 
-            Vehicle v = vehicleDAO.RetrieveVehicle("CC1062R");
+            Vehicle v = vehicleDAO.RetrieveVehicle("BSS671Z");
             vehicleDAO.CloseConnection();
 
 

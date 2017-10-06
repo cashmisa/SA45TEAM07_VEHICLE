@@ -48,7 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>SA45TEAM07_VEHICLE.Program</StartupObject>
+    <StartupObject>SA45TEAM07_VEHICLE.VehicleDAO</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
