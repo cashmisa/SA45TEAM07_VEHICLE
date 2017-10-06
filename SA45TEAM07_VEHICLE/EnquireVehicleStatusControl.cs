@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SA45TEAM07_VEHICLE
 {
-    public class EnquireVehicleStatusControl
+    public class EnquireVehicleStatusControl : IDisposable
     {
         private MainControl mainControl;
         private FormSearch searchUI;
@@ -16,7 +16,7 @@ namespace SA45TEAM07_VEHICLE
         {
             this.mainControl = mainControl;
             this.searchUI = new FormSearch(this);
-            searchUI.displaySearchUI(); 
+            this.searchUI.displaySearchUI();
         }
 
         public MainControl MainControl
@@ -39,6 +39,10 @@ namespace SA45TEAM07_VEHICLE
 
         public void retrieveVehicle(string plateNum)
         {
+
+
+
+            // need to pass in Vehicle as parameter
             vehicleDetailUI = new FormVehicleDetails(this);
 
             // if succesful
@@ -62,6 +66,16 @@ namespace SA45TEAM07_VEHICLE
         public void closeUseCase()
         {
             mainControl.closeUseCase(this);
+        }
+
+        internal void destroy()
+        {
+            this.Dispose();
+        }
+
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
         }
     }
 }
