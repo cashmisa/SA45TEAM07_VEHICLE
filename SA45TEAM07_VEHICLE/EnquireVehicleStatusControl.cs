@@ -8,5 +8,34 @@ namespace SA45TEAM07_VEHICLE
 {
     public class EnquireVehicleStatusControl
     {
+        private frmSearchUI searchUI;
+        private MainControl mainControl;
+
+        public EnquireVehicleStatusControl(MainControl mainControl)
+        {
+            this.mainControl = mainControl;
+            displaySearchUI();      
+        }
+
+        public frmSearchUI SearchUI
+        {
+            get
+            {
+                return searchUI;
+            }
+        }
+
+        public void displaySearchUI()
+        {
+            if (searchUI == null)
+            {
+                searchUI = new frmSearchUI();
+                searchUI.Show();
+            }
+        }
+
+
+
+
     }
 }

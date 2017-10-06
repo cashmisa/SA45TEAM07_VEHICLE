@@ -1,6 +1,6 @@
 ﻿namespace SA45TEAM07_VEHICLE
 {
-    partial class fmRentleReturn
+    partial class FormVehicleDetails
     {
         /// <summary>
         /// Required designer variable.
