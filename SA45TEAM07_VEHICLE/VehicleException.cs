@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace SA45TEAM07_VEHICLE
 {
-    class VehicleException
+    class VehicleException: ApplicationException
     {
+        public VehicleException() : base()    {
+        }
+
+        public VehicleException(string message) : base(message)   {
+        }
+
+        public VehicleException(string message, Exception innerExc) 
+            : base(message, innerExc)   {
+        }
     }
 }

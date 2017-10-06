@@ -10,11 +10,17 @@ namespace SA45TEAM07_VEHICLE
 {
     class VehicleDAO
     {
+        const int CAR = 0;
+        const int TRUCK = 1;
+        const int BUS = 2;
+
         SqlConnection cn;
         SqlCommand cmInsert;
         SqlCommand cmSelbyPK;
         SqlCommand cmSelCountbyPK;
-        SqlCommand cmSelAll;
+        SqlCommand cmSelCarAvailable;
+        SqlCommand cmSelTruckAvailable;
+        SqlCommand cmSelBusAvailable;
 
         private static VehicleDAO dbInstance;
 
@@ -31,7 +37,7 @@ namespace SA45TEAM07_VEHICLE
 
         private void InitializeSQLCmd()
         {
-            throw new NotImplementedException();
+            cmSelCarAvailable.CommandText = "SELECT FROM ";
         }
 
         private static VehicleDAO getInstance()
@@ -44,7 +50,7 @@ namespace SA45TEAM07_VEHICLE
             return dbInstance;
         }
 
-        public void openConnection()
+        public void OpenConnection()
         {
             cn.Open();
         }
@@ -54,5 +60,59 @@ namespace SA45TEAM07_VEHICLE
                 cn.Close();
         }
 
+        public DataTable RetrieveAvailableCarList()
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter(cmSelCarAvailable);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds, "Cars");
+
+            return ds.Tables["Cars"];
+        }
+
+        public DataTable RetrieveAvailableTruckList()
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter(cmSelTruckAvailable);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds, "Trucks");
+
+            return ds.Tables["Trucks"];
+        }
+
+        public DataTable RetrieveAvailableBusList()
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter(cmSelBusAvailable);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds, "Buses");
+
+            return ds.Tables["Buses"];
+        }
+
+        public DataTable RetrievAvailableVehicleList(int type)
+        {
+            string tableName = "";
+            SqlDataAdapter adapter = null;
+            switch (type)
+            {
+                case CAR:
+                    tableName = "Cars";
+                    adapter = new SqlDataAdapter(cmSelCarAvailable);
+                    break;
+                case TRUCK:
+                    tableName = "Trucks";
+                    adapter = new SqlDataAdapter(cmSelTruckAvailable);
+                    break;
+                case BUS:
+                    tableName = "Buses";
+                    adapter = new SqlDataAdapter(cmSelBusAvailable);
+                    break;
+                default:
+                    return null;
+            }
+
+            DataSet ds = new DataSet();
+            adapter.Fill(ds, tableName);
+
+            return ds.Tables[tableName];
+        }
     }
 }
