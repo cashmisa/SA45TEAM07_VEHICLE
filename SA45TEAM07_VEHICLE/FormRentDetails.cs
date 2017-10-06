@@ -12,9 +12,16 @@ namespace SA45TEAM07_VEHICLE
 {
     public partial class FormRentDetails : BaseForm
     {
+        private RentVehicleControl rentvehiclecontrol;
         public FormRentDetails()
         {
             InitializeComponent();
         }
+
+        public FormRentDetails(RentVehicleControl rentvehiclecontrol) : this()
+        {
+            this.rentvehiclecontrol = rentvehiclecontrol;
+        }
+        
     }
 }
