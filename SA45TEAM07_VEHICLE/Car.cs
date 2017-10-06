@@ -11,7 +11,30 @@ namespace SA45TEAM07_VEHICLE
         int maxSeat;
         string carType;
 
-        public int MaxSeat { get => maxSeat; set => maxSeat = value; }
-        public string CarType { get => carType; set => carType = value; }
+        public int MaxSeat
+        {
+            get
+            {
+                return maxSeat;
+            }
+
+            set
+            {
+                maxSeat = value;
+            }
+        }
+
+        public string CarType
+        {
+            get
+            {
+                return carType;
+            }
+
+            set
+            {
+                carType = value;
+            }
+        }
     }
 }
