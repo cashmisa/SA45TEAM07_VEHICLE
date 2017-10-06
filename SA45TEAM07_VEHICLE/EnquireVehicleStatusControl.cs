@@ -22,6 +22,15 @@ namespace SA45TEAM07_VEHICLE
             }   
         }
 
+        public MainControl MainControl
+        {
+            get
+            {
+                return mainControl;
+            }
+        }
+
+
         public FormSearch SearchUI
         {
             get

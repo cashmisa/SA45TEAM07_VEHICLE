@@ -22,6 +22,7 @@ namespace SA45TEAM07_VEHICLE
         public FormSearch(EnquireVehicleStatusControl enquiryControl)
         {
             this.enquiryControl = enquiryControl;
+            this.MdiParent = enquiryControl.MainControl.PortalUI;
         }
 
         public void displaySearchUI()

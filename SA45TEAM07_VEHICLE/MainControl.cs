@@ -14,10 +14,10 @@ namespace SA45TEAM07_VEHICLE
 
         public MainControl()
         {
-            if (PortalUI == null)
+            if (portalUI == null)
             {
-                PortalUI = new FormMain(this);
-                PortalUI.displayPortalUI();
+                portalUI = new FormMain(this);
+                portalUI.displayPortalUI();
             }
         }
 
@@ -26,10 +26,6 @@ namespace SA45TEAM07_VEHICLE
             get
             {
                 return portalUI;
-            }
-            set
-            {
-                portalUI = value;
             }
         }
 
