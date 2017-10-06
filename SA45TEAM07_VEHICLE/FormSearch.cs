@@ -34,5 +34,11 @@ namespace SA45TEAM07_VEHICLE
         {
             enquiryControl.retrieveVehicle("test");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            enquiryControl.close(this);
+            enquiryControl.closeUseCase();
+        }
     }
 }

@@ -28,5 +28,10 @@ namespace SA45TEAM07_VEHICLE
         {
             this.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            enquiryControl.close(this);
+        }
     }
 }

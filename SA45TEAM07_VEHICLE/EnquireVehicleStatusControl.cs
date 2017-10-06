@@ -41,27 +41,27 @@ namespace SA45TEAM07_VEHICLE
         {
             vehicleDetailUI = new FormVehicleDetails(this);
 
-            vehicleDetailUI.displayVehicleDetailUI();
+            // if succesful
+            if (true)
+            {
+                vehicleDetailUI.displayVehicleDetailUI();
+
+            }
+            else
+            {
+                // show
+            }
         }
 
 
-        public void close()
+        public void close(BaseForm form)
         {
-
+            form.Close();
         }
 
         public void closeUseCase()
         {
-
+            mainControl.closeUseCase(this);
         }
-
-        public void destroy()
-        {
-
-        }
-
-
-
-
     }
 }
