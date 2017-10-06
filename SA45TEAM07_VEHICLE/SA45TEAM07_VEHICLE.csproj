@@ -91,6 +91,7 @@
     <Compile Include="RentVehicleControl.cs" />
     <Compile Include="Truck.cs" />
     <Compile Include="Vehicle.cs" />
+    <Compile Include="VehicleCategory.cs" />
     <Compile Include="VehicleDAO.cs" />
     <Compile Include="VehicleException.cs" />
     <Compile Include="VehicleMessage.cs" />
