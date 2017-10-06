@@ -1,6 +1,6 @@
 ﻿namespace SA45TEAM07_VEHICLE
 {
-    partial class frmMain
+    partial class FormMain
     {
         /// <summary>
         /// Required designer variable.

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SA45TEAM07_VEHICLE
 {
-    public partial class fmCategorySearchUI : BaseForm
+    public partial class FormCategorySearch : BaseForm
     {
-        public fmCategorySearchUI()
+        public FormCategorySearch()
         {
             InitializeComponent();
         }

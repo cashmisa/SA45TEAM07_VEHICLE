@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace SA45TEAM07_VEHICLE
 {
-    public partial class frmMain : BaseForm
+    public partial class FormMain : BaseForm
     {
         private MainControl mainControl;
 
-        public frmMain()
+        public FormMain()
         {
             InitializeComponent();
         }
 
-        public frmMain(MainControl mainControl) : this()
+        public FormMain(MainControl mainControl) : this()
         {
             this.mainControl = mainControl;
         }

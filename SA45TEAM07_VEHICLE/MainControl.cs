@@ -10,18 +10,18 @@ namespace SA45TEAM07_VEHICLE
     {
         private EnquireVehicleStatusControl enquiryControl;
         private RentVehicleControl rentControl;
-        private frmMain portalUI;
+        private FormMain portalUI;
 
         public MainControl()
         {
             if (PortalUI == null)
             {
-                PortalUI = new frmMain(this);
+                PortalUI = new FormMain(this);
                 PortalUI.displayPortalUI();
             }
         }
 
-        public frmMain PortalUI
+        public FormMain PortalUI
         {
             get
             {
