@@ -32,12 +32,17 @@ namespace SA45TEAM07_VEHICLE
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            enquiryControl.retrieveVehicle(textBox1.Text);
+            enquiryControl.retrieveVehicle(txbPlateNum.Text.Trim());
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
             enquiryControl.close(this);
+            enquiryControl.closeUseCase();
+        }
+
+        private void FormSearch_FormClosed(object sender, FormClosedEventArgs e)
+        {
             enquiryControl.closeUseCase();
         }
     }

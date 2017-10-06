@@ -42,20 +42,30 @@ namespace SA45TEAM07_VEHICLE
         {
             try
             {
-                VehicleDAO DAO = VehicleDAO.Instance;
-                Vehicle vehicle = DAO.RetrieveVehicle(plateNum);
+                VehicleDAO.Instance.OpenConnection();       
+                Vehicle vehicle = VehicleDAO.Instance.RetrieveVehicle(plateNum);
+               
                 vehicleDetailUI = new FormVehicleDetails(this);
-                vehicleDetailUI.displayVehicleDetail(vehicle);
+                vehicleDetailUI.displayVehicleDetailUI(vehicle);
             }
             catch(VehicleException e)
             {
                 MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                VehicleDAO.Instance.CloseConnection();
             }
         }
 
         public void close(BaseForm form)
         {
             form.Close();
+            
+            if (form is FormVehicleDetails)
+            {
+                this.searchUI.Activate();
+            }
         }
 
         public void closeUseCase()

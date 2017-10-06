@@ -33,12 +33,13 @@ namespace SA45TEAM07_VEHICLE
             txbStatus.Text = vehicle.Status;
         }
 
-        public void displayVehicleDetailUI()
+        public void displayVehicleDetailUI(Vehicle vehicle)
         {
-            this.ShowDialog();
+            displayVehicleDetail(vehicle);
+            this.ShowDialog();          
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
             enquiryControl.close(this);
         }

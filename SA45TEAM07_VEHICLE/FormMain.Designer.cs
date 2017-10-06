@@ -28,28 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblWelcome = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.enquireStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rentVehicleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.returnVehicleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblWelcome = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblWelcome
-            // 
-            this.lblWelcome.BackColor = System.Drawing.Color.PowderBlue;
-            this.lblWelcome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.ForeColor = System.Drawing.Color.White;
-            this.lblWelcome.Location = new System.Drawing.Point(0, 28);
-            this.lblWelcome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(1262, 115);
-            this.lblWelcome.TabIndex = 0;
-            this.lblWelcome.Text = "Welcome to SA45TEAM07 Vehicle Management System";
-            this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // menuStrip1
             // 
@@ -70,7 +56,7 @@
             // 
             this.enquireStatusToolStripMenuItem.Name = "enquireStatusToolStripMenuItem";
             this.enquireStatusToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
-            this.enquireStatusToolStripMenuItem.Text = "Enquire Status";
+            this.enquireStatusToolStripMenuItem.Text = "&Enquire Status";
             this.enquireStatusToolStripMenuItem.Click += new System.EventHandler(this.enquireStatusToolStripMenuItem_Click);
             // 
             // rentVehicleToolStripMenuItem
@@ -92,15 +78,31 @@
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
             this.helpToolStripMenuItem.Text = "Help";
             // 
+            // lblWelcome
+            // 
+            this.lblWelcome.BackColor = System.Drawing.Color.PowderBlue;
+            this.lblWelcome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.ForeColor = System.Drawing.Color.White;
+            this.lblWelcome.Location = new System.Drawing.Point(0, 28);
+            this.lblWelcome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(1262, 115);
+            this.lblWelcome.TabIndex = 0;
+            this.lblWelcome.Text = "Welcome to SA45TEAM07 Vehicle Management System";
+            this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1262, 913);
+            this.ClientSize = new System.Drawing.Size(1262, 713);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.lblWelcome);
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormMain";
             this.Text = "Main";
             this.menuStrip1.ResumeLayout(false);
