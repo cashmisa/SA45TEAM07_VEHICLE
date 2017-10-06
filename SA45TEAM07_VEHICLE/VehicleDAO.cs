@@ -50,18 +50,18 @@ namespace SA45TEAM07_VEHICLE
 
 
             cmSelCarbyPK.CommandText = "SELECT PlateNum, Category, Model, Color, EngineSN, Status" 
-                + "FROM VehiclePlateNum, Car WHERE VehiclePlateNum.PlateNum = Car.CarPlateNum" 
-                + "AND VehiclePlateNum.PlateNum = @platenum";
+                + " FROM VehiclePlateNum, Car WHERE VehiclePlateNum.PlateNum = Car.CarPlateNum" 
+                + " AND VehiclePlateNum.PlateNum = @platenum";
             cmSelCarbyPK.Connection = cn;
 
             cmSelTruckbyPK.CommandText = "SELECT PlateNum, Category, Model, Color, EngineSN, Status"
-                + "FROM VehiclePlateNum, Truck WHERE VehiclePlateNum.PlateNum = Truck.TruckPlateNum"
-                + "AND VehiclePlateNum.PlateNum = @PlateNum";
+                + " FROM VehiclePlateNum, Truck WHERE VehiclePlateNum.PlateNum = Truck.TruckPlateNum"
+                + " AND VehiclePlateNum.PlateNum = @PlateNum";
             cmSelTruckbyPK.Connection = cn;
 
             cmSelBusbyPK.CommandText = "SELECT PlateNum, Category, Model, Color, EngineSN, Status"
-                + "FROM VehiclePlateNum, Bus WHERE VehiclePlateNum.PlateNum = Bus.BusPlateNum"
-                + "AND VehiclePlateNum.PlateNum = @PlateNum";
+                + " FROM VehiclePlateNum, Bus WHERE VehiclePlateNum.PlateNum = Bus.BusPlateNum"
+                + " AND VehiclePlateNum.PlateNum = @PlateNum";
             cmSelBusbyPK.Connection = cn;
 
             cmSelCarAvailable.CommandText = "SELECT * FROM Car WHERE Status = 'Available'";
