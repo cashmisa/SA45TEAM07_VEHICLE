@@ -32,11 +32,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txbModel = new System.Windows.Forms.TextBox();
+            this.txbPlateNum = new System.Windows.Forms.TextBox();
+            this.txbColor = new System.Windows.Forms.TextBox();
+            this.txbEngineSerialNo = new System.Windows.Forms.TextBox();
+            this.txbStatus = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -85,50 +85,50 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Engine Serial No.:";
             // 
-            // textBox1
+            // txbModel
             // 
-            this.textBox1.Location = new System.Drawing.Point(207, 42);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(257, 27);
-            this.textBox1.TabIndex = 4;
+            this.txbModel.Location = new System.Drawing.Point(207, 42);
+            this.txbModel.Margin = new System.Windows.Forms.Padding(4);
+            this.txbModel.Name = "txbModel";
+            this.txbModel.ReadOnly = true;
+            this.txbModel.Size = new System.Drawing.Size(257, 27);
+            this.txbModel.TabIndex = 4;
             // 
-            // textBox2
+            // txbPlateNum
             // 
-            this.textBox2.Location = new System.Drawing.Point(207, 102);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(257, 27);
-            this.textBox2.TabIndex = 5;
+            this.txbPlateNum.Location = new System.Drawing.Point(207, 102);
+            this.txbPlateNum.Margin = new System.Windows.Forms.Padding(4);
+            this.txbPlateNum.Name = "txbPlateNum";
+            this.txbPlateNum.ReadOnly = true;
+            this.txbPlateNum.Size = new System.Drawing.Size(257, 27);
+            this.txbPlateNum.TabIndex = 5;
             // 
-            // textBox3
+            // txbColor
             // 
-            this.textBox3.Location = new System.Drawing.Point(207, 155);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(257, 27);
-            this.textBox3.TabIndex = 6;
+            this.txbColor.Location = new System.Drawing.Point(207, 155);
+            this.txbColor.Margin = new System.Windows.Forms.Padding(4);
+            this.txbColor.Name = "txbColor";
+            this.txbColor.ReadOnly = true;
+            this.txbColor.Size = new System.Drawing.Size(257, 27);
+            this.txbColor.TabIndex = 6;
             // 
-            // textBox4
+            // txbEngineSerialNo
             // 
-            this.textBox4.Location = new System.Drawing.Point(207, 210);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(257, 27);
-            this.textBox4.TabIndex = 7;
+            this.txbEngineSerialNo.Location = new System.Drawing.Point(207, 210);
+            this.txbEngineSerialNo.Margin = new System.Windows.Forms.Padding(4);
+            this.txbEngineSerialNo.Name = "txbEngineSerialNo";
+            this.txbEngineSerialNo.ReadOnly = true;
+            this.txbEngineSerialNo.Size = new System.Drawing.Size(257, 27);
+            this.txbEngineSerialNo.TabIndex = 7;
             // 
-            // textBox5
+            // txbStatus
             // 
-            this.textBox5.Location = new System.Drawing.Point(206, 42);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(257, 27);
-            this.textBox5.TabIndex = 9;
+            this.txbStatus.Location = new System.Drawing.Point(206, 42);
+            this.txbStatus.Margin = new System.Windows.Forms.Padding(4);
+            this.txbStatus.Name = "txbStatus";
+            this.txbStatus.ReadOnly = true;
+            this.txbStatus.Size = new System.Drawing.Size(257, 27);
+            this.txbStatus.TabIndex = 9;
             // 
             // label5
             // 
@@ -142,18 +142,18 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txbEngineSerialNo);
+            this.groupBox1.Controls.Add(this.txbColor);
+            this.groupBox1.Controls.Add(this.txbPlateNum);
+            this.groupBox1.Controls.Add(this.txbModel);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(56, 36);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(500, 276);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
@@ -161,12 +161,12 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.txbStatus);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Location = new System.Drawing.Point(57, 331);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(499, 103);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
@@ -174,7 +174,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(230, 460);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(133, 37);
             this.button1.TabIndex = 8;
@@ -207,11 +207,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txbModel;
+        private System.Windows.Forms.TextBox txbPlateNum;
+        private System.Windows.Forms.TextBox txbColor;
+        private System.Windows.Forms.TextBox txbEngineSerialNo;
+        private System.Windows.Forms.TextBox txbStatus;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;

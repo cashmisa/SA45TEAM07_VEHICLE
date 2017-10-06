@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SA45TEAM07_VEHICLE
 {
@@ -39,24 +40,18 @@ namespace SA45TEAM07_VEHICLE
 
         public void retrieveVehicle(string plateNum)
         {
-
-
-
-            // need to pass in Vehicle as parameter
-            vehicleDetailUI = new FormVehicleDetails(this);
-
-            // if succesful
-            if (true)
+            try
             {
-                vehicleDetailUI.displayVehicleDetailUI();
-
+                VehicleDAO DAO = VehicleDAO.Instance;
+                Vehicle vehicle = DAO.RetrieveVehicle(plateNum);
+                vehicleDetailUI = new FormVehicleDetails(this);
+                vehicleDetailUI.displayVehicleDetail(vehicle);
             }
-            else
+            catch(VehicleException e)
             {
-                // show
+                MessageBox.Show(e.Message);
             }
         }
-
 
         public void close(BaseForm form)
         {

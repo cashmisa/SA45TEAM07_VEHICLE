@@ -42,7 +42,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(801, 1080);
-            this.button1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.button1.Margin = new System.Windows.Forms.Padding(7);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(226, 68);
             this.button1.TabIndex = 12;
@@ -55,15 +55,15 @@
             this.lbxCategory.FormattingEnabled = true;
             this.lbxCategory.ItemHeight = 33;
             this.lbxCategory.Location = new System.Drawing.Point(352, 57);
-            this.lbxCategory.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.lbxCategory.Margin = new System.Windows.Forms.Padding(7);
             this.lbxCategory.Name = "lbxCategory";
-            this.lbxCategory.Size = new System.Drawing.Size(497, 136);
+            this.lbxCategory.Size = new System.Drawing.Size(497, 235);
             this.lbxCategory.TabIndex = 13;
             // 
             // btnRetreive
             // 
             this.btnRetreive.Location = new System.Drawing.Point(962, 88);
-            this.btnRetreive.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnRetreive.Margin = new System.Windows.Forms.Padding(7);
             this.btnRetreive.Name = "btnRetreive";
             this.btnRetreive.Size = new System.Drawing.Size(226, 68);
             this.btnRetreive.TabIndex = 14;
@@ -75,7 +75,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(66, 321);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(7);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(1241, 706);
@@ -97,9 +97,9 @@
             this.gbxCategory.Controls.Add(this.btnRetreive);
             this.gbxCategory.Controls.Add(this.lbxCategory);
             this.gbxCategory.Location = new System.Drawing.Point(66, 26);
-            this.gbxCategory.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.gbxCategory.Margin = new System.Windows.Forms.Padding(7);
             this.gbxCategory.Name = "gbxCategory";
-            this.gbxCategory.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.gbxCategory.Padding = new System.Windows.Forms.Padding(7);
             this.gbxCategory.Size = new System.Drawing.Size(1243, 249);
             this.gbxCategory.TabIndex = 18;
             this.gbxCategory.TabStop = false;
@@ -107,7 +107,7 @@
             // btnRent
             // 
             this.btnRent.Location = new System.Drawing.Point(328, 1080);
-            this.btnRent.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnRent.Margin = new System.Windows.Forms.Padding(7);
             this.btnRent.Name = "btnRent";
             this.btnRent.Size = new System.Drawing.Size(226, 68);
             this.btnRent.TabIndex = 19;

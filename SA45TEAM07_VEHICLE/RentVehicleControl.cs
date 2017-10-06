@@ -15,12 +15,15 @@ namespace SA45TEAM07_VEHICLE
         public RentVehicleControl(MainControl mainControl)
         {
             this.mainControl = mainControl;
+            this.formCategorySearch = new FormCategorySearch(this);
+            formCategorySearch.displayCategorySearchUI();
+            List<string> vehicleCategory = VehicleDAO.Instance.RetrieveCategoryList();//retrieve via DAO
+            formCategorySearch.displayCategory(vehicleCategory);
+
         }
 
         public void SelectCategory()
         {
-            formCategorySearch = new FormCategorySearch(this);
-            ;
         }
 
         public void SelectVehicle()
