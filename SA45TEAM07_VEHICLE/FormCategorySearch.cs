@@ -14,13 +14,9 @@ namespace SA45TEAM07_VEHICLE
     {
         private RentVehicleControl rentvehiclecontrol;
 
-        public FormCategorySearch()
+        public FormCategorySearch(RentVehicleControl rentvehiclecontrol)
         {
             InitializeComponent();
-        }
-
-        public FormCategorySearch(RentVehicleControl rentvehiclecontrol) : this()
-        {
             this.rentvehiclecontrol = rentvehiclecontrol;
         }
 
@@ -64,10 +60,6 @@ namespace SA45TEAM07_VEHICLE
             dataGridViewAvailableVehicles.DataSource = dt;
         }
 
-        /// <summary>
-        /// need to add how to keep this plateNum info
-        /// </summary>
-
         private void rentButtonClicked()
         {
             string plateNum = "";
@@ -85,6 +77,7 @@ namespace SA45TEAM07_VEHICLE
 
         private void dataGridViewAvailableVehicles_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            //correct event for double clicking?
             rentButtonClicked();
         }
 

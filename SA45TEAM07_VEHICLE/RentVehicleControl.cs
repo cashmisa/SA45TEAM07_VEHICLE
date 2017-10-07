@@ -53,11 +53,24 @@ namespace SA45TEAM07_VEHICLE
             }
         }
 
-        internal void retrieveCustomerDetails(string NRIC)
+        internal Customer retrieveCustomerDetails(string NRIC)
         {
-            ///create a customer object, 
-            //
+           
+            RentalDAO rentalDAO = RentalDAO.getInstance();
 
+            try
+            {
+                rentalDAO.openConnection();
+                return rentalDAO.RetrieveCustomer(NRIC);
+            }
+            catch (Exception)
+            {
+                throw;           // preserve stack trace     
+            }
+            finally
+            {
+                rentalDAO.CloseConnection();
+            }
         }
 
         public RentVehicleControl(MainControl mainControl)
@@ -65,8 +78,44 @@ namespace SA45TEAM07_VEHICLE
             this.MainControl = mainControl;
             this.FormCategorySearch = new FormCategorySearch(this);
             FormCategorySearch.displayCategorySearchUI();
-            List<string> vehicleCategory = VehicleDAO.Instance.RetrieveCategoryList();//retrieve via DAO
+            List<string> vehicleCategory = VehicleDAO.Instance.RetrieveCategoryList();
             FormCategorySearch.displayCategory(vehicleCategory);
+        }
+
+        internal void updateVehicleStatus(Vehicle rentedVehicle)
+        {
+            try
+            {
+                VehicleDAO.Instance.OpenConnection();
+                //VehicleDAO.Instance.UpdateVehicleStatus(rentedVehicle);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                VehicleDAO.Instance.CloseConnection();
+            }
+        }
+
+        internal void CreateRentalRecord(RentalRecord record)
+        {
+            RentalDAO rentalDAO = RentalDAO.getInstance();
+            try
+            {
+                rentalDAO.openConnection();
+                rentalDAO.InsertRentalRecord(record);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                rentalDAO.CloseConnection();
+            }
+
         }
 
         public void SelectCategory(string category)
@@ -105,12 +154,20 @@ namespace SA45TEAM07_VEHICLE
         {
             FormRentDetails = new FormRentDetails(this);
             FormRentDetails.displayRentalDetails(plateNum);
-            
 
-            //keep this plateNum, create a transaction, add this plate number
-            //take customer, add into this transaction object's attribute value
-            //pass this object to the DAO to save it to database
-
+            try
+            {
+                VehicleDAO.Instance.OpenConnection();
+                FormRentDetails.Record.RentedVehicle = VehicleDAO.Instance.RetrieveVehicle(plateNum);
+            }
+            catch (Exception)
+            {
+                throw;           // preserve stack trace     
+            }
+            finally
+            {
+                VehicleDAO.Instance.CloseConnection();
+            }
         }
 
         public void close(BaseForm form)

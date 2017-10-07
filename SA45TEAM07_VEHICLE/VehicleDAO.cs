@@ -75,6 +75,12 @@ namespace SA45TEAM07_VEHICLE
 
             cmSelCategory.CommandText = "SELECT Category From VehicleCategory";
             cmSelCategory.Connection = cn;
+
+        }
+
+        internal void UpdateVehicleStatus(Vehicle rentedVehicle)
+        {
+            //need to update respective table depending on vehicle type :(
         }
 
         public static VehicleDAO Instance
@@ -239,6 +245,8 @@ namespace SA45TEAM07_VEHICLE
 
             return output;
         }
+
+
 
         [STAThread]
         static void Main(string[] args)

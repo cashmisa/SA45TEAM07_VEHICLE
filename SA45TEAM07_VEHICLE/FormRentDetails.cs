@@ -13,14 +13,26 @@ namespace SA45TEAM07_VEHICLE
     public partial class FormRentDetails : BaseForm
     {
         private RentVehicleControl rentvehiclecontrol;
-        public FormRentDetails()
+        RentalRecord record;
+
+        public RentalRecord Record
         {
-            InitializeComponent();
+            get
+            {
+                return record;
+            }
+
+            set
+            {
+                record = value;
+            }
         }
 
-        public FormRentDetails(RentVehicleControl rentvehiclecontrol) : this()
+        public FormRentDetails(RentVehicleControl rentvehiclecontrol)
         {
+            InitializeComponent();
             this.rentvehiclecontrol = rentvehiclecontrol;
+            record = new RentalRecord();
         }
 
         internal void displayRentalDetails(string plateNum)
@@ -31,7 +43,38 @@ namespace SA45TEAM07_VEHICLE
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            rentvehiclecontrol.retrieveCustomerDetails(txbNRIC.Text.Trim());
+            //if (VehicleUtility.isNRICValid(txbNRIC.Text))
+            //{
+            //    MessageBox.Show(VehicleMessage.InvalidNRIC);
+            //    return;
+            //}
+            
+            record.RentingCustomer = rentvehiclecontrol.retrieveCustomerDetails(txbNRIC.Text.Trim());
+            MessageBox.Show(record.RentingCustomer.CustomerID.ToString());
+            txbCusName.Text = record.RentingCustomer.Name;
+            txbPhone.Text = record.RentingCustomer.TelNum;
+            txbEmail.Text = record.RentingCustomer.Email;
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            //now that the form is holding the RentalRecord object 
+            //and its Customer and Vehicle attribute
+
+            record.RentStartDate = dateTimePickerRent.Value.Date;
+            record.RentalPeriod = (dateTimePickerDue.Value.Date - dateTimePickerRent.Value.Date).Days;
+
+            rentvehiclecontrol.updateVehicleStatus(record.RentedVehicle);
+            //again it would have been better to pass vehicle object here
+
+
+            rentvehiclecontrol.CreateRentalRecord(record);
+            toolStripStatusLabelRentalStatus.Text = VehicleMessage.RentalrRecordSuccessful;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            rentvehiclecontrol.close(this);
         }
     }
 }

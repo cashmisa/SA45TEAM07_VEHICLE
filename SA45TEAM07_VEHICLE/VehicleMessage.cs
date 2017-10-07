@@ -17,8 +17,11 @@ namespace SA45TEAM07_VEHICLE
         public const String CustomerRecordNotFound
             = "T07013E Customer record not found.";
 
-        public const String CustomerRecordSuccessful
-            = "T07099I Rental record successfully created!";
+        public const String InvalidNRIC
+            = "T07013E Invalid NRIC/FIN entered.";
+
+        public const String RentalrRecordSuccessful
+            = "Rental record successfully created!";
 
     }
 }

@@ -30,9 +30,9 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txbEmail = new System.Windows.Forms.TextBox();
+            this.txbPhone = new System.Windows.Forms.TextBox();
+            this.txbCusName = new System.Windows.Forms.TextBox();
             this.txbNRIC = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,9 +40,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerDue = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerRent = new System.Windows.Forms.DateTimePicker();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.statusStripRentRecordStatus = new System.Windows.Forms.StatusStrip();
@@ -56,9 +56,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnSearch);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txbEmail);
+            this.groupBox1.Controls.Add(this.txbPhone);
+            this.groupBox1.Controls.Add(this.txbCusName);
             this.groupBox1.Controls.Add(this.txbNRIC);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -83,29 +83,29 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // textBox4
+            // txbEmail
             // 
-            this.textBox4.Location = new System.Drawing.Point(197, 169);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(226, 23);
-            this.textBox4.TabIndex = 15;
+            this.txbEmail.Location = new System.Drawing.Point(197, 169);
+            this.txbEmail.Name = "txbEmail";
+            this.txbEmail.ReadOnly = true;
+            this.txbEmail.Size = new System.Drawing.Size(226, 23);
+            this.txbEmail.TabIndex = 15;
             // 
-            // textBox3
+            // txbPhone
             // 
-            this.textBox3.Location = new System.Drawing.Point(197, 127);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(226, 23);
-            this.textBox3.TabIndex = 14;
+            this.txbPhone.Location = new System.Drawing.Point(197, 127);
+            this.txbPhone.Name = "txbPhone";
+            this.txbPhone.ReadOnly = true;
+            this.txbPhone.Size = new System.Drawing.Size(226, 23);
+            this.txbPhone.TabIndex = 14;
             // 
-            // textBox2
+            // txbCusName
             // 
-            this.textBox2.Location = new System.Drawing.Point(197, 83);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(226, 23);
-            this.textBox2.TabIndex = 13;
+            this.txbCusName.Location = new System.Drawing.Point(197, 83);
+            this.txbCusName.Name = "txbCusName";
+            this.txbCusName.ReadOnly = true;
+            this.txbCusName.Size = new System.Drawing.Size(226, 23);
+            this.txbCusName.TabIndex = 13;
             // 
             // txbNRIC
             // 
@@ -153,9 +153,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
+            this.groupBox2.Controls.Add(this.dateTimePickerDue);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.dateTimePickerRent);
             this.groupBox2.Location = new System.Drawing.Point(39, 258);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(504, 145);
@@ -172,14 +172,14 @@
             this.label6.TabIndex = 19;
             this.label6.Text = "Return Date:";
             // 
-            // dateTimePicker2
+            // dateTimePickerDue
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(197, 85);
-            this.dateTimePicker2.MinDate = new System.DateTime(2017, 10, 6, 0, 0, 0, 0);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(226, 23);
-            this.dateTimePicker2.TabIndex = 18;
+            this.dateTimePickerDue.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerDue.Location = new System.Drawing.Point(197, 85);
+            this.dateTimePickerDue.MinDate = new System.DateTime(2017, 10, 6, 0, 0, 0, 0);
+            this.dateTimePickerDue.Name = "dateTimePickerDue";
+            this.dateTimePickerDue.Size = new System.Drawing.Size(226, 23);
+            this.dateTimePickerDue.TabIndex = 18;
             // 
             // label5
             // 
@@ -190,23 +190,24 @@
             this.label5.TabIndex = 17;
             this.label5.Text = "Rent Date:";
             // 
-            // dateTimePicker1
+            // dateTimePickerRent
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(197, 44);
-            this.dateTimePicker1.MinDate = new System.DateTime(2017, 10, 6, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(226, 23);
-            this.dateTimePicker1.TabIndex = 0;
+            this.dateTimePickerRent.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerRent.Location = new System.Drawing.Point(197, 44);
+            this.dateTimePickerRent.MinDate = new System.DateTime(2017, 10, 6, 0, 0, 0, 0);
+            this.dateTimePickerRent.Name = "dateTimePickerRent";
+            this.dateTimePickerRent.Size = new System.Drawing.Size(226, 23);
+            this.dateTimePickerRent.TabIndex = 0;
             // 
             // btnConfirm
             // 
             this.btnConfirm.Location = new System.Drawing.Point(144, 430);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(106, 31);
-            this.btnConfirm.TabIndex = 9;
+            this.btnConfirm.TabIndex = 1;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // btnCancel
             // 
@@ -216,6 +217,7 @@
             this.btnCancel.TabIndex = 10;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // statusStripRentRecordStatus
             // 
@@ -265,9 +267,9 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txbEmail;
+        private System.Windows.Forms.TextBox txbPhone;
+        private System.Windows.Forms.TextBox txbCusName;
         private System.Windows.Forms.TextBox txbNRIC;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -276,9 +278,9 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDue;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerRent;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.StatusStrip statusStripRentRecordStatus;
