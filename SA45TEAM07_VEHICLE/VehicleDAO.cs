@@ -194,6 +194,7 @@ namespace SA45TEAM07_VEHICLE
                 v.Color = rdCar["Color"].ToString();
                 v.EngineSN = rdCar["EngineSN"].ToString();
                 v.Status = rdCar["Status"].ToString();
+                v.Category = rdCar["Category"].ToString();
 
                 rdCar.Close();
                 return v;
@@ -208,6 +209,7 @@ namespace SA45TEAM07_VEHICLE
                 v.Color = rdTruck["Color"].ToString();
                 v.EngineSN = rdTruck["EngineSN"].ToString();
                 v.Status = rdTruck["Status"].ToString();
+                v.Category = rdTruck["Category"].ToString();
 
                 rdTruck.Close();
                 return v;
@@ -222,6 +224,7 @@ namespace SA45TEAM07_VEHICLE
                 v.Color = rdBus["Color"].ToString();
                 v.EngineSN = rdBus["EngineSN"].ToString();
                 v.Status = rdBus["Status"].ToString();
+                v.Category = rdBus["Category"].ToString();
             }
             else
             {

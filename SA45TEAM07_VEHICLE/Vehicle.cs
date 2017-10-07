@@ -13,6 +13,7 @@ namespace SA45TEAM07_VEHICLE
         string engineSN;
         string status = "available";
         string plateNum;
+        string category;
 
         public string Model
         {
@@ -76,6 +77,18 @@ namespace SA45TEAM07_VEHICLE
             set
             {
                 plateNum = value;
+            }
+        }
+
+        public string Category
+        {
+            get
+            {
+                return category;
+            }
+            set
+            {
+                category = value;
             }
         }
     }
