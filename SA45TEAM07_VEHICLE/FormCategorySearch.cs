@@ -49,10 +49,6 @@ namespace SA45TEAM07_VEHICLE
         public void displayCategory(List<string> vehiclecategory)
         {
             lbxCategory.DataSource = vehiclecategory;
-            //foreach(var veh in vehiclecategory)
-            //{
-            //    this.lbxCategory.Items.Add(veh);
-            //}
         }
 
         internal void displayAvailableVehicle(DataTable dt)
@@ -75,12 +71,10 @@ namespace SA45TEAM07_VEHICLE
             rentvehiclecontrol.SelectVehicle(plateNum);
         }
 
-        private void dataGridViewAvailableVehicles_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewAvailableVehicles_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //correct event for double clicking?
+            
             rentButtonClicked();
         }
-
-        
     }
 }

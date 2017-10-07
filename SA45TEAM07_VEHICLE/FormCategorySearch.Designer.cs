@@ -82,7 +82,7 @@
             this.dataGridViewAvailableVehicles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewAvailableVehicles.Size = new System.Drawing.Size(584, 321);
             this.dataGridViewAvailableVehicles.TabIndex = 16;
-            this.dataGridViewAvailableVehicles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAvailableVehicles_CellContentClick);
+            this.dataGridViewAvailableVehicles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAvailableVehicles_CellDoubleClick);
             // 
             // label1
             // 

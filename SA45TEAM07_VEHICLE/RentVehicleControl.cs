@@ -174,10 +174,12 @@ namespace SA45TEAM07_VEHICLE
         {
             form.Close();
 
+            //change focus
             if (form is FormRentDetails)
             {
                 this.formCategorySearch.Activate();
             }
+            
         }
 
         public void closeUseCase()

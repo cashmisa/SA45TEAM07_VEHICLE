@@ -43,38 +43,69 @@ namespace SA45TEAM07_VEHICLE
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            //if (VehicleUtility.isNRICValid(txbNRIC.Text))
-            //{
-            //    MessageBox.Show(VehicleMessage.InvalidNRIC);
-            //    return;
-            //}
-            
-            record.RentingCustomer = rentvehiclecontrol.retrieveCustomerDetails(txbNRIC.Text.Trim());
-            MessageBox.Show(record.RentingCustomer.CustomerID.ToString());
-            txbCusName.Text = record.RentingCustomer.Name;
-            txbPhone.Text = record.RentingCustomer.TelNum;
-            txbEmail.Text = record.RentingCustomer.Email;
+            if (btnSearch.Enabled == true)
+            {
+                if (!VehicleUtility.isNRICValid(txbNRIC.Text))
+                {
+                    MessageBox.Show(VehicleMessage.InvalidNRIC);
+                    return;
+                }
+
+                record.RentingCustomer = rentvehiclecontrol.retrieveCustomerDetails(txbNRIC.Text.Trim());
+                txbCusName.Text = record.RentingCustomer.Name;
+                txbPhone.Text = record.RentingCustomer.TelNum;
+                txbEmail.Text = record.RentingCustomer.Email;
+            }
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            //now that the form is holding the RentalRecord object 
-            //and its Customer and Vehicle attribute
+            if (btnConfirm.Enabled == true)
+            {
+                //now that the form is holding the RentalRecord object 
+                //and its Customer and Vehicle attribute
 
-            record.RentStartDate = dateTimePickerRent.Value.Date;
-            record.RentalPeriod = (dateTimePickerDue.Value.Date - dateTimePickerRent.Value.Date).Days;
+                record.RentStartDate = dateTimePickerRent.Value.Date;
+                record.RentalPeriod = (dateTimePickerDue.Value.Date - dateTimePickerRent.Value.Date).Days;
 
-            rentvehiclecontrol.updateVehicleStatus(record.RentedVehicle);
-            //again it would have been better to pass vehicle object here
+                rentvehiclecontrol.updateVehicleStatus(record.RentedVehicle);
+                //again it would have been better to pass vehicle object here
 
 
-            rentvehiclecontrol.CreateRentalRecord(record);
-            toolStripStatusLabelRentalStatus.Text = VehicleMessage.RentalrRecordSuccessful;
+                rentvehiclecontrol.CreateRentalRecord(record);
+                MessageBox.Show(VehicleMessage.RentalrRecordSuccessful);
+                rentvehiclecontrol.close(this);
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             rentvehiclecontrol.close(this);
         }
+
+        private void FormRentDetails_Load(object sender, EventArgs e)
+        {
+            btnSearch.Enabled = false;
+            btnConfirm.Enabled = false;
+            dateTimePickerDue.MinDate = dateTimePickerRent.Value.Date.AddDays(1);
+            dateTimePickerDue.MaxDate = dateTimePickerRent.Value.Date.AddDays(99);
+        }
+
+        private void txbNRIC_TextChanged(object sender, EventArgs e)
+        {
+            if (txbNRIC.Text.Trim() != "")
+            {
+                btnSearch.Enabled = true;
+            }
+        }
+
+        private void txbCusName_TextChanged(object sender, EventArgs e)
+        {
+            if (txbCusName.Text != "")
+            {
+                btnConfirm.Enabled = true;
+            }
+        }
+
     }
 }

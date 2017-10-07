@@ -106,6 +106,7 @@
             this.txbCusName.ReadOnly = true;
             this.txbCusName.Size = new System.Drawing.Size(226, 23);
             this.txbCusName.TabIndex = 13;
+            this.txbCusName.TextChanged += new System.EventHandler(this.txbCusName_TextChanged);
             // 
             // txbNRIC
             // 
@@ -113,6 +114,7 @@
             this.txbNRIC.Name = "txbNRIC";
             this.txbNRIC.Size = new System.Drawing.Size(141, 23);
             this.txbNRIC.TabIndex = 12;
+            this.txbNRIC.TextChanged += new System.EventHandler(this.txbNRIC_TextChanged);
             // 
             // label4
             // 
@@ -253,6 +255,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormRentDetails";
             this.Text = "Rent Details";
+            this.Load += new System.EventHandler(this.FormRentDetails_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
