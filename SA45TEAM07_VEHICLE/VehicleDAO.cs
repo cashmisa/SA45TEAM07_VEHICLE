@@ -18,6 +18,7 @@ namespace SA45TEAM07_VEHICLE
         SqlCommand cmSelCarbyPK;
         SqlCommand cmSelTruckbyPK;
         SqlCommand cmSelBusbyPK;
+        SqlCommand cmSelVehicleByPK;
         SqlCommand cmSelCarAvailable;
         SqlCommand cmSelTruckAvailable;
         SqlCommand cmSelBusAvailable;
@@ -41,6 +42,7 @@ namespace SA45TEAM07_VEHICLE
             cmSelCarbyPK = new SqlCommand();
             cmSelTruckbyPK = new SqlCommand();
             cmSelBusbyPK = new SqlCommand();
+            cmSelVehicleByPK = new SqlCommand();
 
             cmSelCarAvailable = new SqlCommand();
             cmSelTruckAvailable = new SqlCommand();
@@ -63,6 +65,17 @@ namespace SA45TEAM07_VEHICLE
                 + " FROM VehiclePlateNum, Bus WHERE VehiclePlateNum.PlateNum = Bus.BusPlateNum"
                 + " AND VehiclePlateNum.PlateNum = @PlateNum";
             cmSelBusbyPK.Connection = cn;
+
+            cmSelVehicleByPK.CommandText = "SELECT PlateNum, Category, Model, Color, EngineSN, Status"
+                + " FROM VehiclePlateNum, Car WHERE VehiclePlateNum.PlateNum = Car.CarPlateNum"
+                + " AND VehiclePlateNum.PlateNum = @Platenum" + " UNION "
+                + "SELECT PlateNum, Category, Model, Color, EngineSN, Status"
+                + " FROM VehiclePlateNum, Truck WHERE VehiclePlateNum.PlateNum = Truck.TruckPlateNum"
+                + " AND VehiclePlateNum.PlateNum = @PlateNum" + " UNION "
+                + "SELECT PlateNum, Category, Model, Color, EngineSN, Status"
+                + " FROM VehiclePlateNum, Bus WHERE VehiclePlateNum.PlateNum = Bus.BusPlateNum"
+                + " AND VehiclePlateNum.PlateNum = @PlateNum";
+            cmSelVehicleByPK.Connection = cn;
 
             cmSelCarAvailable.CommandText = "SELECT * FROM Car WHERE Status = 'Available'";
             cmSelCarAvailable.Connection = cn;
@@ -163,68 +176,113 @@ namespace SA45TEAM07_VEHICLE
 
         public Vehicle RetrieveVehicle(string plateNum)
         {
+            SqlParameter pVehiclePlateNum = new SqlParameter("@PlateNum", SqlDbType.NVarChar, 7);
+            pVehiclePlateNum.Value = plateNum;
+
+            cmSelVehicleByPK.Parameters.Clear();
+            cmSelVehicleByPK.Parameters.Add(pVehiclePlateNum);
+
+            Vehicle v = new Vehicle();
+
+            SqlDataReader rdVehicle = cmSelVehicleByPK.ExecuteReader();
+            if (rdVehicle.Read())
+            {
+                v.Model = rdVehicle["Model"].ToString();
+                v.PlateNum = rdVehicle["PlateNum"].ToString();
+                v.Color = rdVehicle["Color"].ToString();
+                v.EngineSN = rdVehicle["EngineSN"].ToString();
+                v.Status = rdVehicle["Status"].ToString();
+                v.Category = rdVehicle["Category"].ToString();
+            }
+            else
+            {
+                throw new VehicleException(VehicleMessage.VehicleRecordNotFound);
+            }
+
+            rdVehicle.Close();
+            return v;
+        }
+
+        public Car RetrieveCar(string plateNum)
+        {
             SqlParameter pCarPlateNum = new SqlParameter("@PlateNum", SqlDbType.NVarChar, 7);
             pCarPlateNum.Value = plateNum;
 
-            SqlParameter pTruckPlateNum = new SqlParameter("@PlateNum", SqlDbType.NVarChar, 7);
-            pTruckPlateNum.Value = plateNum;
-
-            SqlParameter pBusPlateNum = new SqlParameter("@PlateNum", SqlDbType.NVarChar, 7);
-            pBusPlateNum.Value = plateNum;
-
-            // clear any previous parameters set before adding new parameters
+            //clear any previous parameters set before adding new parameters
             cmSelCarbyPK.Parameters.Clear();
             cmSelCarbyPK.Parameters.Add(pCarPlateNum);
 
-            cmSelTruckbyPK.Parameters.Clear();
-            cmSelTruckbyPK.Parameters.Add(pTruckPlateNum);
-
-            cmSelBusbyPK.Parameters.Clear();
-            cmSelBusbyPK.Parameters.Add(pBusPlateNum);
-
-            Vehicle v = new Vehicle();
+            Car c = new Car();
 
             // execute reader
             SqlDataReader rdCar = cmSelCarbyPK.ExecuteReader();
 
             if (rdCar.Read())
             {
-                v.Model = rdCar["Model"].ToString();
-                v.PlateNum = rdCar["PlateNum"].ToString();
-                v.Color = rdCar["Color"].ToString();
-                v.EngineSN = rdCar["EngineSN"].ToString();
-                v.Status = rdCar["Status"].ToString();
-                v.Category = rdCar["Category"].ToString();
-
-                rdCar.Close();
-                return v;
+                c.Model = rdCar["Model"].ToString();
+                c.PlateNum = rdCar["PlateNum"].ToString();
+                c.Color = rdCar["Color"].ToString();
+                c.EngineSN = rdCar["EngineSN"].ToString();
+                c.Status = rdCar["Status"].ToString();
+                c.Category = rdCar["Category"].ToString();
             }
+            else
+            {
+                throw new VehicleException(VehicleMessage.VehicleRecordNotFound);
+            }
+
             rdCar.Close();
+            return c;
+        }
+
+        public Truck RetrieveTruck(string plateNum)
+        {
+            SqlParameter pTruckPlateNum = new SqlParameter("@PlateNum", SqlDbType.NVarChar, 7);
+            pTruckPlateNum.Value = plateNum;
+
+            cmSelTruckbyPK.Parameters.Clear();
+            cmSelTruckbyPK.Parameters.Add(pTruckPlateNum);
+
+            Truck t = new Truck();
 
             SqlDataReader rdTruck = cmSelTruckbyPK.ExecuteReader();
             if (rdTruck.Read())
             {
-                v.Model = rdTruck["Model"].ToString();
-                v.PlateNum = rdTruck["PlateNum"].ToString();
-                v.Color = rdTruck["Color"].ToString();
-                v.EngineSN = rdTruck["EngineSN"].ToString();
-                v.Status = rdTruck["Status"].ToString();
-                v.Category = rdTruck["Category"].ToString();
-
-                rdTruck.Close();
-                return v;
+                t.Model = rdTruck["Model"].ToString();
+                t.PlateNum = rdTruck["PlateNum"].ToString();
+                t.Color = rdTruck["Color"].ToString();
+                t.EngineSN = rdTruck["EngineSN"].ToString();
+                t.Status = rdTruck["Status"].ToString();
+                t.Category = rdTruck["Category"].ToString();
             }
+            else
+            {
+                throw new VehicleException(VehicleMessage.VehicleRecordNotFound);
+            }
+
             rdTruck.Close();
+            return t;
+        }
+
+        public Bus RetrieveBus(string plateNum)
+        {
+            SqlParameter pBusPlateNum = new SqlParameter("@PlateNum", SqlDbType.NVarChar, 7);
+            pBusPlateNum.Value = plateNum;
+
+            cmSelBusbyPK.Parameters.Clear();
+            cmSelBusbyPK.Parameters.Add(pBusPlateNum);
+
+            Bus b = new Bus();
 
             SqlDataReader rdBus = cmSelBusbyPK.ExecuteReader();
             if (rdBus.Read())
             {
-                v.Model = rdBus["Model"].ToString();
-                v.PlateNum = rdBus["PlateNum"].ToString();
-                v.Color = rdBus["Color"].ToString();
-                v.EngineSN = rdBus["EngineSN"].ToString();
-                v.Status = rdBus["Status"].ToString();
-                v.Category = rdBus["Category"].ToString();
+                b.Model = rdBus["Model"].ToString();
+                b.PlateNum = rdBus["PlateNum"].ToString();
+                b.Color = rdBus["Color"].ToString();
+                b.EngineSN = rdBus["EngineSN"].ToString();
+                b.Status = rdBus["Status"].ToString();
+                b.Category = rdBus["Category"].ToString();
             }
             else
             {
@@ -232,8 +290,7 @@ namespace SA45TEAM07_VEHICLE
             }
 
             rdBus.Close();
-            return v;
-
+            return b;
         }
 
         public List<string> RetrieveCategoryList()
@@ -259,7 +316,6 @@ namespace SA45TEAM07_VEHICLE
 
             Vehicle v = vehicleDAO.RetrieveVehicle("BSS671Z");
             vehicleDAO.CloseConnection();
-
 
             Console.WriteLine(v.PlateNum);
             Console.ReadLine();
