@@ -20,7 +20,7 @@ namespace SA45TEAM07_VEHICLE
             this.rentvehiclecontrol = rentvehiclecontrol;
         }
 
-        internal void displayCategorySearchUI()
+        internal void displayAvailableVehiclesUI()
         {
             this.Show();
         }
@@ -83,5 +83,6 @@ namespace SA45TEAM07_VEHICLE
         {
             rentvehiclecontrol.SelectCategory(lbxCategory.SelectedItem.ToString());
         }
+
     }
 }

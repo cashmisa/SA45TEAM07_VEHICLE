@@ -178,7 +178,7 @@
             // 
             this.dateTimePickerDue.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerDue.Location = new System.Drawing.Point(197, 85);
-            this.dateTimePickerDue.MinDate = new System.DateTime(2017, 10, 6, 0, 0, 0, 0);
+            this.dateTimePickerDue.MinDate = new System.DateTime(2011, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerDue.Name = "dateTimePickerDue";
             this.dateTimePickerDue.Size = new System.Drawing.Size(226, 23);
             this.dateTimePickerDue.TabIndex = 18;

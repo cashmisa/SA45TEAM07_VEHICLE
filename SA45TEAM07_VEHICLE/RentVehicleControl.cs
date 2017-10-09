@@ -53,7 +53,7 @@ namespace SA45TEAM07_VEHICLE
             }
         }
 
-        public Customer RetrieveCustomerDetails(string NRIC)
+        public Customer RetrieveCustomer(string NRIC)
         {
            
             RentalDAO rentalDAO = RentalDAO.Instance;
@@ -77,7 +77,7 @@ namespace SA45TEAM07_VEHICLE
         {
             this.MainControl = mainControl;
             this.FormCategorySearch = new FormAvailableVehicles(this);
-            FormCategorySearch.displayCategorySearchUI();
+            FormCategorySearch.displayAvailableVehiclesUI();
             List<string> vehicleCategory = VehicleDAO.Instance.RetrieveCategoryList();
             FormCategorySearch.displayCategory(vehicleCategory);
         }

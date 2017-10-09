@@ -111,6 +111,7 @@ namespace SA45TEAM07_VEHICLE
                     cmUpdateCarStatus.Parameters.Clear();
                     cmUpdateCarStatus.Parameters.Add(pPlateNum);
                     cmUpdateCarStatus.ExecuteNonQuery();
+                    
                     break;
                 case "Truck":
                     cmUpdateTruckStatus.Parameters.Clear();
