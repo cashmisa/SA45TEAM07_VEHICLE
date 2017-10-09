@@ -115,7 +115,7 @@
             this.btnRent.UseVisualStyleBackColor = true;
             this.btnRent.Click += new System.EventHandler(this.btnRent_Click);
             // 
-            // FormCategorySearch
+            // FormAvailableVehicles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -125,7 +125,7 @@
             this.Controls.Add(this.dataGridViewAvailableVehicles);
             this.Controls.Add(this.btnClose);
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.Name = "FormCategorySearch";
+            this.Name = "FormAvailableVehicles";
             this.Text = "Find Available Vehicles";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormCategorySearch_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAvailableVehicles)).EndInit();

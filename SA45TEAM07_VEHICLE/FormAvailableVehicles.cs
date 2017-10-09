@@ -20,7 +20,7 @@ namespace SA45TEAM07_VEHICLE
             this.rentvehiclecontrol = rentvehiclecontrol;
         }
 
-        internal void displayCategorySearchUI()
+        internal void displayAvailableVehiclesUI()
         {
             this.Show();
         }
@@ -65,9 +65,6 @@ namespace SA45TEAM07_VEHICLE
                 plateNum = dataGridViewAvailableVehicles.Rows[a].Cells[0].Value.ToString();
             }
 
-            //Rent button is grayed out
-            //only after a selection is made,
-
             rentvehiclecontrol.SelectVehicle(plateNum);
         }
 
@@ -86,5 +83,6 @@ namespace SA45TEAM07_VEHICLE
         {
             rentvehiclecontrol.SelectCategory(lbxCategory.SelectedItem.ToString());
         }
+
     }
 }
