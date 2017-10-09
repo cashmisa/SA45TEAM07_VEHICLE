@@ -81,11 +81,11 @@
     <Compile Include="FormRentDetails.Designer.cs">
       <DependentUpon>FormRentDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCategorySearch.cs">
+    <Compile Include="FormAvailableVehicles.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCategorySearch.Designer.cs">
-      <DependentUpon>FormCategorySearch.cs</DependentUpon>
+    <Compile Include="FormAvailableVehicles.Designer.cs">
+      <DependentUpon>FormAvailableVehicles.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSearch.cs">
       <SubType>Form</SubType>
@@ -123,8 +123,8 @@
     <EmbeddedResource Include="FormRentDetails.resx">
       <DependentUpon>FormRentDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCategorySearch.resx">
-      <DependentUpon>FormCategorySearch.cs</DependentUpon>
+    <EmbeddedResource Include="FormAvailableVehicles.resx">
+      <DependentUpon>FormAvailableVehicles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSearch.resx">
       <DependentUpon>FormSearch.cs</DependentUpon>

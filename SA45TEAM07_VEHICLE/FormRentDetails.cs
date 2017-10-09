@@ -54,7 +54,7 @@ namespace SA45TEAM07_VEHICLE
                 }
                 try
                 {
-                    record.RentingCustomer = rentvehiclecontrol.retrieveCustomerDetails(txbNRIC.Text.Trim());
+                    record.RentingCustomer = rentvehiclecontrol.RetrieveCustomerDetails(txbNRIC.Text.Trim());
                     txbCusName.Text = record.RentingCustomer.Name;
                     txbPhone.Text = record.RentingCustomer.TelNum;
                     txbEmail.Text = record.RentingCustomer.Email;

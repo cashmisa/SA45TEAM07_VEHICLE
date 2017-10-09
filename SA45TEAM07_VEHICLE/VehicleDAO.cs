@@ -73,7 +73,7 @@ namespace SA45TEAM07_VEHICLE
 
             cmSelVehicleByPK.CommandText = cmSelCarByPK.CommandText + " UNION "
                 + cmSelTruckByPK.CommandText + " UNION "
-                + cmSelCarByPK.CommandText + " AND VehiclePlateNum.PlateNum = @PlateNum";
+                + cmSelBusByPK.CommandText;
             cmSelVehicleByPK.Connection = cn;
 
             cmSelCarAvailable.CommandText = "SELECT * FROM Car WHERE Status = 'Available'";

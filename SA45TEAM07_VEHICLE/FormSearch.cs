@@ -43,12 +43,12 @@ namespace SA45TEAM07_VEHICLE
         private void btnClose_Click(object sender, EventArgs e)
         {
             enquiryControl.Close(this);
-            enquiryControl.closeUseCase();
+            enquiryControl.CloseUseCase();
         }
 
         private void FormSearch_FormClosed(object sender, FormClosedEventArgs e)
         {
-            enquiryControl.closeUseCase();
+            enquiryControl.CloseUseCase();
         }
 
         private void FormSearch_LocationChanged(object sender, EventArgs e)

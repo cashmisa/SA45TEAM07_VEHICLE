@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace SA45TEAM07_VEHICLE
 {
-    public partial class FormCategorySearch : BaseForm
+    public partial class FormAvailableVehicles : BaseForm
     {
         private RentVehicleControl rentvehiclecontrol;
 
-        public FormCategorySearch(RentVehicleControl rentvehiclecontrol)
+        public FormAvailableVehicles(RentVehicleControl rentvehiclecontrol)
         {
             InitializeComponent();
             this.rentvehiclecontrol = rentvehiclecontrol;

@@ -44,12 +44,12 @@ namespace SA45TEAM07_VEHICLE
 
         private void enquireStatusToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            mainControl.initialiseEnquiryControl();        
+            mainControl.InitialiseEnquiryControl();        
         }
 
         private void rentVehicleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            mainControl.initialiseRentControl();
+            mainControl.InitialiseRentControl();
         }
     }
 }

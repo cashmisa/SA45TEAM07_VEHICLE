@@ -24,10 +24,10 @@ namespace SA45TEAM07_VEHICLE
 
             cn = new SqlConnection(strCN);
 
-            initializeSQLCmd();
+            InitializeSQLCmd();
         }
 
-        private void initializeSQLCmd()
+        private void InitializeSQLCmd()
         {
             cmInsertRentalRecord = new SqlCommand();
             cmSelCustomerbyUqK = new SqlCommand();
@@ -42,16 +42,19 @@ namespace SA45TEAM07_VEHICLE
             cmSelCustomerbyUqK.Connection = cn;
 
         }
-        public static RentalDAO getInstance()
+        public static RentalDAO Instance
         {
+            get
+            {
+                if (dbInstance == null)
+                    dbInstance = new RentalDAO();
 
-            if (dbInstance == null)
-                dbInstance = new RentalDAO();
-
-            return dbInstance;
+                return dbInstance;
+            }
+            
         }
 
-        public void openConnection()
+        public void OpenConnection()
         {
             cn.Open();
         }
@@ -119,8 +122,8 @@ namespace SA45TEAM07_VEHICLE
         [STAThread]
         static void Main(string[] args)
         {
-            RentalDAO RentalDAO = RentalDAO.getInstance();
-            RentalDAO.openConnection();
+            RentalDAO RentalDAO = RentalDAO.Instance;
+            RentalDAO.OpenConnection();
 
             Customer c = RentalDAO.RetrieveCustomer("I8877640T");
             RentalDAO.CloseConnection();
