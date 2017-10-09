@@ -45,7 +45,7 @@ namespace SA45TEAM07_VEHICLE
             }
         }
 
-        public void initialiseEnquiryControl()
+        public void InitialiseEnquiryControl()
         {
             if(this.enquiryControl == null)
             {
@@ -53,7 +53,7 @@ namespace SA45TEAM07_VEHICLE
             }
         }
 
-        public void initialiseRentControl()
+        public void InitialiseRentControl()
         {
             if (this.rentControl == null)
             {
@@ -61,13 +61,13 @@ namespace SA45TEAM07_VEHICLE
             }
         }
 
-        public void closeUseCase(EnquireVehicleStatusControl enquiryControl)
+        public void CloseUseCase(EnquireVehicleStatusControl enquiryControl)
         {
             enquiryControl.Destroy();
             this.enquiryControl = null;
         }
 
-        public void closeUseCase(RentVehicleControl rentControl)
+        public void CloseUseCase(RentVehicleControl rentControl)
         {
             rentControl.Destroy();
             this.rentControl = null;

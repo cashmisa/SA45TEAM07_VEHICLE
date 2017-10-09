@@ -11,7 +11,7 @@ namespace SA45TEAM07_VEHICLE
     public class RentVehicleControl
     {
         private MainControl mainControl;
-        private FormCategorySearch formCategorySearch;
+        private FormAvailableVehicles formCategorySearch;
         private FormRentDetails formRentDetails;
 
         public MainControl MainControl
@@ -27,7 +27,7 @@ namespace SA45TEAM07_VEHICLE
             }
         }
 
-        public FormCategorySearch FormCategorySearch
+        public FormAvailableVehicles FormCategorySearch
         {
             get
             {
@@ -53,14 +53,14 @@ namespace SA45TEAM07_VEHICLE
             }
         }
 
-        public Customer retrieveCustomerDetails(string NRIC)
+        public Customer RetrieveCustomerDetails(string NRIC)
         {
            
-            RentalDAO rentalDAO = RentalDAO.getInstance();
+            RentalDAO rentalDAO = RentalDAO.Instance;
 
             try
             {
-                rentalDAO.openConnection();
+                rentalDAO.OpenConnection();
                 return rentalDAO.RetrieveCustomer(NRIC);
             }
             catch (Exception)
@@ -76,7 +76,7 @@ namespace SA45TEAM07_VEHICLE
         public RentVehicleControl(MainControl mainControl)
         {
             this.MainControl = mainControl;
-            this.FormCategorySearch = new FormCategorySearch(this);
+            this.FormCategorySearch = new FormAvailableVehicles(this);
             FormCategorySearch.displayCategorySearchUI();
             List<string> vehicleCategory = VehicleDAO.Instance.RetrieveCategoryList();
             FormCategorySearch.displayCategory(vehicleCategory);
@@ -101,10 +101,10 @@ namespace SA45TEAM07_VEHICLE
 
         public void CreateRentalRecord(RentalRecord record)
         {
-            RentalDAO rentalDAO = RentalDAO.getInstance();
+            RentalDAO rentalDAO = RentalDAO.Instance;
             try
             {
-                rentalDAO.openConnection();
+                rentalDAO.OpenConnection();
                 rentalDAO.InsertRentalRecord(record);
             }
             catch (Exception)
@@ -184,7 +184,7 @@ namespace SA45TEAM07_VEHICLE
 
         public void CloseUseCase()
         {
-            mainControl.closeUseCase(this);
+            mainControl.CloseUseCase(this);
         }
 
         public void Destroy()

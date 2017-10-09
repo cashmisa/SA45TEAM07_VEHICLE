@@ -67,9 +67,9 @@ namespace SA45TEAM07_VEHICLE
             }
         }
 
-        public void closeUseCase()
+        public void CloseUseCase()
         {
-            mainControl.closeUseCase(this);
+            mainControl.CloseUseCase(this);
         }
 
         public void Destroy()
