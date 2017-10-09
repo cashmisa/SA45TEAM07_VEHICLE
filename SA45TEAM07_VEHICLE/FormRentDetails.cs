@@ -50,11 +50,18 @@ namespace SA45TEAM07_VEHICLE
                     MessageBox.Show(VehicleMessage.InvalidNRIC);
                     return;
                 }
-
-                record.RentingCustomer = rentvehiclecontrol.retrieveCustomerDetails(txbNRIC.Text.Trim());
-                txbCusName.Text = record.RentingCustomer.Name;
-                txbPhone.Text = record.RentingCustomer.TelNum;
-                txbEmail.Text = record.RentingCustomer.Email;
+                try
+                {
+                    record.RentingCustomer = rentvehiclecontrol.retrieveCustomerDetails(txbNRIC.Text.Trim());
+                    txbCusName.Text = record.RentingCustomer.Name;
+                    txbPhone.Text = record.RentingCustomer.TelNum;
+                    txbEmail.Text = record.RentingCustomer.Email;
+                }
+                catch (VehicleException)
+                {
+                    MessageBox.Show(VehicleMessage.CustomerRecordNotFound);
+                    return;
+                }
             }
         }
 
