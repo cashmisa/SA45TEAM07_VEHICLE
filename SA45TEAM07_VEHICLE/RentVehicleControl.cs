@@ -13,7 +13,7 @@ namespace SA45TEAM07_VEHICLE
         private MainControl mainControl;
         private FormAvailableVehicles formCategorySearch;
         private FormRentDetails formRentDetails;
-
+        
         public MainControl MainControl
         {
             get
@@ -158,7 +158,7 @@ namespace SA45TEAM07_VEHICLE
             try
             {
                 VehicleDAO.Instance.OpenConnection();
-                FormRentDetails.Record.RentedVehicle = VehicleDAO.Instance.RetrieveVehicle(plateNum);
+                formRentDetails.Record.RentedVehicle = VehicleDAO.Instance.RetrieveVehicle(plateNum);
             }
             catch (Exception)
             {
