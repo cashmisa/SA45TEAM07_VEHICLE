@@ -65,9 +65,6 @@ namespace SA45TEAM07_VEHICLE
                 plateNum = dataGridViewAvailableVehicles.Rows[a].Cells[0].Value.ToString();
             }
 
-            //Rent button is grayed out
-            //only after a selection is made,
-
             rentvehiclecontrol.SelectVehicle(plateNum);
         }
 

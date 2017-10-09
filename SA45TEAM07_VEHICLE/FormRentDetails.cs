@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Transactions;
+
 
 namespace SA45TEAM07_VEHICLE
 {
@@ -43,7 +45,7 @@ namespace SA45TEAM07_VEHICLE
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (btnSearch.Enabled == true)
+            if (btnEnter.Enabled == true)
             {
                 if (!VehicleUtility.isNRICValid(txbNRIC.Text))
                 {
@@ -75,9 +77,13 @@ namespace SA45TEAM07_VEHICLE
                 record.RentStartDate = dateTimePickerRent.Value.Date;
                 record.RentalPeriod = (dateTimePickerDue.Value.Date - dateTimePickerRent.Value.Date).Days;
 
-                rentvehiclecontrol.UpdateVehicleStatus(record.RentedVehicle);
-   
-                rentvehiclecontrol.CreateRentalRecord(record);
+                using (TransactionScope ts = new TransactionScope())
+                {
+                    rentvehiclecontrol.UpdateVehicleStatus(record.RentedVehicle);
+                    rentvehiclecontrol.CreateRentalRecord(record);
+                    ts.Complete();
+                }
+                
                 MessageBox.Show(VehicleMessage.RentalrRecordSuccessful);
                 rentvehiclecontrol.Close(this);
             }
@@ -90,7 +96,7 @@ namespace SA45TEAM07_VEHICLE
 
         private void FormRentDetails_Load(object sender, EventArgs e)
         {
-            btnSearch.Enabled = false;
+            btnEnter.Enabled = false;
             btnConfirm.Enabled = false;
             dateTimePickerDue.MinDate = dateTimePickerRent.Value.Date.AddDays(1);
             dateTimePickerDue.MaxDate = dateTimePickerRent.Value.Date.AddDays(99);
@@ -100,7 +106,7 @@ namespace SA45TEAM07_VEHICLE
         {
             if (txbNRIC.Text.Trim() != "")
             {
-                btnSearch.Enabled = true;
+                btnEnter.Enabled = true;
             }
         }
 

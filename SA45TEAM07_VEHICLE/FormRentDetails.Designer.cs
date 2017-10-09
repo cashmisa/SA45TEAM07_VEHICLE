@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnEnter = new System.Windows.Forms.Button();
             this.txbEmail = new System.Windows.Forms.TextBox();
             this.txbPhone = new System.Windows.Forms.TextBox();
             this.txbCusName = new System.Windows.Forms.TextBox();
@@ -55,7 +55,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Controls.Add(this.btnEnter);
             this.groupBox1.Controls.Add(this.txbEmail);
             this.groupBox1.Controls.Add(this.txbPhone);
             this.groupBox1.Controls.Add(this.txbCusName);
@@ -73,15 +73,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Details";
             // 
-            // btnSearch
+            // btnEnter
             // 
-            this.btnSearch.Location = new System.Drawing.Point(348, 38);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 16;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.btnEnter.Location = new System.Drawing.Point(348, 38);
+            this.btnEnter.Name = "btnEnter";
+            this.btnEnter.Size = new System.Drawing.Size(75, 23);
+            this.btnEnter.TabIndex = 16;
+            this.btnEnter.Text = "Enter";
+            this.btnEnter.UseVisualStyleBackColor = true;
+            this.btnEnter.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txbEmail
             // 
@@ -196,7 +196,7 @@
             // 
             this.dateTimePickerRent.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerRent.Location = new System.Drawing.Point(197, 44);
-            this.dateTimePickerRent.MinDate = new System.DateTime(2017, 10, 6, 0, 0, 0, 0);
+            this.dateTimePickerRent.MinDate = new System.DateTime(1980, 2, 23, 0, 0, 0, 0);
             this.dateTimePickerRent.Name = "dateTimePickerRent";
             this.dateTimePickerRent.Size = new System.Drawing.Size(226, 23);
             this.dateTimePickerRent.TabIndex = 0;
@@ -278,7 +278,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnEnter;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePickerDue;
