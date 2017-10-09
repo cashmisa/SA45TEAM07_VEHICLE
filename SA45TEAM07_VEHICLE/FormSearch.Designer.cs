@@ -38,6 +38,7 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.Enabled = false;
             this.btnSearch.Location = new System.Drawing.Point(118, 143);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSearch.Name = "btnSearch";
@@ -92,6 +93,7 @@
             this.txbPlateNum.Name = "txbPlateNum";
             this.txbPlateNum.Size = new System.Drawing.Size(410, 30);
             this.txbPlateNum.TabIndex = 0;
+            this.txbPlateNum.TextChanged += new System.EventHandler(this.txbPlateNum_TextChanged);
             // 
             // FormSearch
             // 

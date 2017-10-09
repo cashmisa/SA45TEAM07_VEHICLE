@@ -67,5 +67,17 @@ namespace SA45TEAM07_VEHICLE
 
             base.WndProc(ref message);
         }
+
+        private void txbPlateNum_TextChanged(object sender, EventArgs e)
+        {
+            if (txbPlateNum.Text.Length > 0)
+            {
+                btnSearch.Enabled = true;
+            }
+            else
+            {
+                btnSearch.Enabled = false;
+            }
+        }
     }
 }
