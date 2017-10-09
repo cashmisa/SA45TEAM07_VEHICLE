@@ -32,12 +32,17 @@ namespace SA45TEAM07_VEHICLE
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            if (!VehicleUtility.isVehiclePlateValid(txbPlateNum.Text.Trim()))
+            {
+                MessageBox.Show(VehicleMessage.InvalidPlateNum);
+                return;
+            }
             enquiryControl.retrieveVehicle(txbPlateNum.Text.Trim());
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            enquiryControl.close(this);
+            enquiryControl.Close(this);
             enquiryControl.closeUseCase();
         }
 

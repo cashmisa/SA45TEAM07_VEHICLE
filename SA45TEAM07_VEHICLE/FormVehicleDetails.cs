@@ -41,12 +41,12 @@ namespace SA45TEAM07_VEHICLE
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            enquiryControl.close(this);
+            enquiryControl.Close(this);
         }
 
         private void FormVehicleDetails_FormClosed(object sender, FormClosedEventArgs e)
         {
-            enquiryControl.close(this);
+            enquiryControl.Close(this);
         }
     }
 }

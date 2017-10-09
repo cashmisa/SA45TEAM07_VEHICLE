@@ -20,6 +20,9 @@ namespace SA45TEAM07_VEHICLE
         public const String InvalidNRIC
             = "T07013E Invalid NRIC/FIN entered.";
 
+        public const String InvalidPlateNum
+            = "T07013E Invalid Plate Number entered.";
+
         public const String RentalrRecordSuccessful
             = "Rental record successfully created!";
 

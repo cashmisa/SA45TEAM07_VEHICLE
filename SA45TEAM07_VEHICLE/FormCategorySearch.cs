@@ -27,7 +27,7 @@ namespace SA45TEAM07_VEHICLE
 
         private void btnRetreive_Click(object sender, EventArgs e)
         {
-            rentvehiclecontrol.SelectCategory(lbxCategory.SelectedItem.ToString());
+            RetreiveClicked();
         }
 
         private void btnRent_Click(object sender, EventArgs e)
@@ -37,13 +37,13 @@ namespace SA45TEAM07_VEHICLE
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            rentvehiclecontrol.close(this);
-            rentvehiclecontrol.closeUseCase();
+            rentvehiclecontrol.Close(this);
+            rentvehiclecontrol.CloseUseCase();
         }
 
         private void FormCategorySearch_FormClosed(object sender, FormClosedEventArgs e)
         {
-            rentvehiclecontrol.closeUseCase();
+            rentvehiclecontrol.CloseUseCase();
         }
 
         public void displayCategory(List<string> vehiclecategory)
@@ -75,6 +75,16 @@ namespace SA45TEAM07_VEHICLE
         {
             
             rentButtonClicked();
+        }
+
+        private void lbxCategory_DoubleClick(object sender, EventArgs e)
+        {
+            RetreiveClicked();
+        }
+
+        public void RetreiveClicked()
+        {
+            rentvehiclecontrol.SelectCategory(lbxCategory.SelectedItem.ToString());
         }
     }
 }

@@ -57,6 +57,7 @@
             this.lbxCategory.Name = "lbxCategory";
             this.lbxCategory.Size = new System.Drawing.Size(236, 64);
             this.lbxCategory.TabIndex = 13;
+            this.lbxCategory.DoubleClick += new System.EventHandler(this.lbxCategory_DoubleClick);
             // 
             // btnRetreive
             // 

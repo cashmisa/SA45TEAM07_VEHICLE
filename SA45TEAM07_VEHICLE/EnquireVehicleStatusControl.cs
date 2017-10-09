@@ -57,7 +57,7 @@ namespace SA45TEAM07_VEHICLE
             }
         }
 
-        public void close(BaseForm form)
+        public void Close(BaseForm form)
         {
             form.Close();
             
@@ -72,7 +72,7 @@ namespace SA45TEAM07_VEHICLE
             mainControl.closeUseCase(this);
         }
 
-        internal void destroy()
+        public void Destroy()
         {
             this.Dispose();
         }

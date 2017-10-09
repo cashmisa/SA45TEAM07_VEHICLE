@@ -53,7 +53,7 @@ namespace SA45TEAM07_VEHICLE
             }
         }
 
-        internal Customer retrieveCustomerDetails(string NRIC)
+        public Customer retrieveCustomerDetails(string NRIC)
         {
            
             RentalDAO rentalDAO = RentalDAO.getInstance();
@@ -82,12 +82,12 @@ namespace SA45TEAM07_VEHICLE
             FormCategorySearch.displayCategory(vehicleCategory);
         }
 
-        internal void updateVehicleStatus(Vehicle rentedVehicle)
+        public void UpdateVehicleStatus(Vehicle rentedVehicle)
         {
             try
             {
                 VehicleDAO.Instance.OpenConnection();
-                //VehicleDAO.Instance.UpdateVehicleStatus(rentedVehicle);
+                VehicleDAO.Instance.UpdateVehicleStatus(rentedVehicle);
             }
             catch (Exception)
             {
@@ -99,7 +99,7 @@ namespace SA45TEAM07_VEHICLE
             }
         }
 
-        internal void CreateRentalRecord(RentalRecord record)
+        public void CreateRentalRecord(RentalRecord record)
         {
             RentalDAO rentalDAO = RentalDAO.getInstance();
             try
@@ -153,7 +153,7 @@ namespace SA45TEAM07_VEHICLE
         public void SelectVehicle(string plateNum)
         {
             FormRentDetails = new FormRentDetails(this);
-            FormRentDetails.displayRentalDetails(plateNum);
+            FormRentDetails.DisplayRentalDetails(plateNum);
 
             try
             {
@@ -170,7 +170,7 @@ namespace SA45TEAM07_VEHICLE
             }
         }
 
-        public void close(BaseForm form)
+        public void Close(BaseForm form)
         {
             form.Close();
 
@@ -182,12 +182,12 @@ namespace SA45TEAM07_VEHICLE
             
         }
 
-        public void closeUseCase()
+        public void CloseUseCase()
         {
             mainControl.closeUseCase(this);
         }
 
-        internal void destroy()
+        public void Destroy()
         {
             this.Dispose();
         }

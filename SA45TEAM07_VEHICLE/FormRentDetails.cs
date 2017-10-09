@@ -35,7 +35,7 @@ namespace SA45TEAM07_VEHICLE
             record = new RentalRecord();
         }
 
-        internal void displayRentalDetails(string plateNum)
+        public void DisplayRentalDetails(string plateNum)
         {
             this.Show();
             toolStripStatusLabelRentInfo.Text = "Vehicle selected: " + plateNum;
@@ -68,19 +68,17 @@ namespace SA45TEAM07_VEHICLE
                 record.RentStartDate = dateTimePickerRent.Value.Date;
                 record.RentalPeriod = (dateTimePickerDue.Value.Date - dateTimePickerRent.Value.Date).Days;
 
-                rentvehiclecontrol.updateVehicleStatus(record.RentedVehicle);
-                //again it would have been better to pass vehicle object here
-
-
+                rentvehiclecontrol.UpdateVehicleStatus(record.RentedVehicle);
+   
                 rentvehiclecontrol.CreateRentalRecord(record);
                 MessageBox.Show(VehicleMessage.RentalrRecordSuccessful);
-                rentvehiclecontrol.close(this);
+                rentvehiclecontrol.Close(this);
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            rentvehiclecontrol.close(this);
+            rentvehiclecontrol.Close(this);
         }
 
         private void FormRentDetails_Load(object sender, EventArgs e)

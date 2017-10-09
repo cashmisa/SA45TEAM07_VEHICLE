@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace SA45TEAM07_VEHICLE
 {
-    class RentalDAO
+    public class RentalDAO
     {
         SqlConnection cn;
         SqlCommand cmInsertRentalRecord;

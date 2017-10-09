@@ -15,14 +15,17 @@ namespace SA45TEAM07_VEHICLE
         public const int BUS = 2;
 
         SqlConnection cn;
-        SqlCommand cmSelCarbyPK;
-        SqlCommand cmSelTruckbyPK;
-        SqlCommand cmSelBusbyPK;
+        SqlCommand cmSelCarByPK;
+        SqlCommand cmSelTruckByPK;
+        SqlCommand cmSelBusByPK;
         SqlCommand cmSelVehicleByPK;
         SqlCommand cmSelCarAvailable;
         SqlCommand cmSelTruckAvailable;
         SqlCommand cmSelBusAvailable;
         SqlCommand cmSelCategory;
+        SqlCommand cmUpdateCarStatus;
+        SqlCommand cmUpdateTruckStatus;
+        SqlCommand cmUpdateBusStatus;
 
         private static VehicleDAO dbInstance;
 
@@ -39,9 +42,9 @@ namespace SA45TEAM07_VEHICLE
 
         private void InitializeSQLCmd()
         {
-            cmSelCarbyPK = new SqlCommand();
-            cmSelTruckbyPK = new SqlCommand();
-            cmSelBusbyPK = new SqlCommand();
+            cmSelCarByPK = new SqlCommand();
+            cmSelTruckByPK = new SqlCommand();
+            cmSelBusByPK = new SqlCommand();
             cmSelVehicleByPK = new SqlCommand();
 
             cmSelCarAvailable = new SqlCommand();
@@ -49,32 +52,28 @@ namespace SA45TEAM07_VEHICLE
             cmSelBusAvailable = new SqlCommand();
 
             cmSelCategory = new SqlCommand();
+            cmUpdateCarStatus = new SqlCommand();
+            cmUpdateTruckStatus = new SqlCommand();
+            cmUpdateBusStatus = new SqlCommand();
 
-
-            cmSelCarbyPK.CommandText = "SELECT PlateNum, Category, Model, Color, EngineSN, Status"
+            cmSelCarByPK.CommandText = "SELECT PlateNum, Category, Model, Color, EngineSN, Status"
                 + " FROM VehiclePlateNum, Car WHERE VehiclePlateNum.PlateNum = Car.CarPlateNum"
                 + " AND VehiclePlateNum.PlateNum = @Platenum";
-            cmSelCarbyPK.Connection = cn;
+            cmSelCarByPK.Connection = cn;
 
-            cmSelTruckbyPK.CommandText = "SELECT PlateNum, Category, Model, Color, EngineSN, Status"
+            cmSelTruckByPK.CommandText = "SELECT PlateNum, Category, Model, Color, EngineSN, Status"
                 + " FROM VehiclePlateNum, Truck WHERE VehiclePlateNum.PlateNum = Truck.TruckPlateNum"
                 + " AND VehiclePlateNum.PlateNum = @PlateNum";
-            cmSelTruckbyPK.Connection = cn;
+            cmSelTruckByPK.Connection = cn;
 
-            cmSelBusbyPK.CommandText = "SELECT PlateNum, Category, Model, Color, EngineSN, Status"
+            cmSelBusByPK.CommandText = "SELECT PlateNum, Category, Model, Color, EngineSN, Status"
                 + " FROM VehiclePlateNum, Bus WHERE VehiclePlateNum.PlateNum = Bus.BusPlateNum"
                 + " AND VehiclePlateNum.PlateNum = @PlateNum";
-            cmSelBusbyPK.Connection = cn;
+            cmSelBusByPK.Connection = cn;
 
-            cmSelVehicleByPK.CommandText = "SELECT PlateNum, Category, Model, Color, EngineSN, Status"
-                + " FROM VehiclePlateNum, Car WHERE VehiclePlateNum.PlateNum = Car.CarPlateNum"
-                + " AND VehiclePlateNum.PlateNum = @Platenum" + " UNION "
-                + "SELECT PlateNum, Category, Model, Color, EngineSN, Status"
-                + " FROM VehiclePlateNum, Truck WHERE VehiclePlateNum.PlateNum = Truck.TruckPlateNum"
-                + " AND VehiclePlateNum.PlateNum = @PlateNum" + " UNION "
-                + "SELECT PlateNum, Category, Model, Color, EngineSN, Status"
-                + " FROM VehiclePlateNum, Bus WHERE VehiclePlateNum.PlateNum = Bus.BusPlateNum"
-                + " AND VehiclePlateNum.PlateNum = @PlateNum";
+            cmSelVehicleByPK.CommandText = cmSelCarByPK.CommandText + " UNION "
+                + cmSelTruckByPK.CommandText + " UNION "
+                + cmSelCarByPK.CommandText + " AND VehiclePlateNum.PlateNum = @PlateNum";
             cmSelVehicleByPK.Connection = cn;
 
             cmSelCarAvailable.CommandText = "SELECT * FROM Car WHERE Status = 'Available'";
@@ -89,11 +88,43 @@ namespace SA45TEAM07_VEHICLE
             cmSelCategory.CommandText = "SELECT Category From VehicleCategory";
             cmSelCategory.Connection = cn;
 
+            cmUpdateCarStatus.CommandText = "UPDATE Car SET Status = 'Rented Out' WHERE CarPlateNum = @PlateNum";
+            cmUpdateCarStatus.Connection = cn;
+
+            cmUpdateTruckStatus.CommandText = "UPDATE Truck SET Status = 'Rented Out' WHERE TruckPlateNum = @PlateNum";
+            cmUpdateTruckStatus.Connection = cn;
+
+            cmUpdateBusStatus.CommandText = "UPDATE Bus SET Status = 'Rented Out' WHERE BusPlateNum = @PlateNum";
+            cmUpdateBusStatus.Connection = cn;
         }
 
-        internal void UpdateVehicleStatus(Vehicle rentedVehicle)
+        public void UpdateVehicleStatus(Vehicle rentedVehicle)
         {
-            //need to update respective table depending on vehicle type :(
+            //rentedVehicle.category = name of the table to be retrieved;
+            //rentedVehicle.plateNum = plateNum
+            SqlParameter pPlateNum = new SqlParameter("@PlateNum", SqlDbType.NVarChar, 7);
+            pPlateNum.Value = rentedVehicle.PlateNum;
+
+            switch (rentedVehicle.Category)
+            {
+                case "Car":
+                    cmUpdateCarStatus.Parameters.Clear();
+                    cmUpdateCarStatus.Parameters.Add(pPlateNum);
+                    cmUpdateCarStatus.ExecuteNonQuery();
+                    break;
+                case "Truck":
+                    cmUpdateTruckStatus.Parameters.Clear();
+                    cmUpdateTruckStatus.Parameters.Add(pPlateNum);
+                    cmUpdateTruckStatus.ExecuteNonQuery();
+                    break;
+                case "Bus":
+                    cmUpdateBusStatus.Parameters.Clear();
+                    cmUpdateBusStatus.Parameters.Add(pPlateNum);
+                    cmUpdateBusStatus.ExecuteNonQuery();
+                    break;
+                default:
+                    break;
+            }
         }
 
         public static VehicleDAO Instance
@@ -209,13 +240,13 @@ namespace SA45TEAM07_VEHICLE
             pCarPlateNum.Value = plateNum;
 
             //clear any previous parameters set before adding new parameters
-            cmSelCarbyPK.Parameters.Clear();
-            cmSelCarbyPK.Parameters.Add(pCarPlateNum);
+            cmSelCarByPK.Parameters.Clear();
+            cmSelCarByPK.Parameters.Add(pCarPlateNum);
 
             Car c = new Car();
 
             // execute reader
-            SqlDataReader rdCar = cmSelCarbyPK.ExecuteReader();
+            SqlDataReader rdCar = cmSelCarByPK.ExecuteReader();
 
             if (rdCar.Read())
             {
@@ -240,12 +271,12 @@ namespace SA45TEAM07_VEHICLE
             SqlParameter pTruckPlateNum = new SqlParameter("@PlateNum", SqlDbType.NVarChar, 7);
             pTruckPlateNum.Value = plateNum;
 
-            cmSelTruckbyPK.Parameters.Clear();
-            cmSelTruckbyPK.Parameters.Add(pTruckPlateNum);
+            cmSelTruckByPK.Parameters.Clear();
+            cmSelTruckByPK.Parameters.Add(pTruckPlateNum);
 
             Truck t = new Truck();
 
-            SqlDataReader rdTruck = cmSelTruckbyPK.ExecuteReader();
+            SqlDataReader rdTruck = cmSelTruckByPK.ExecuteReader();
             if (rdTruck.Read())
             {
                 t.Model = rdTruck["Model"].ToString();
@@ -269,12 +300,12 @@ namespace SA45TEAM07_VEHICLE
             SqlParameter pBusPlateNum = new SqlParameter("@PlateNum", SqlDbType.NVarChar, 7);
             pBusPlateNum.Value = plateNum;
 
-            cmSelBusbyPK.Parameters.Clear();
-            cmSelBusbyPK.Parameters.Add(pBusPlateNum);
+            cmSelBusByPK.Parameters.Clear();
+            cmSelBusByPK.Parameters.Add(pBusPlateNum);
 
             Bus b = new Bus();
 
-            SqlDataReader rdBus = cmSelBusbyPK.ExecuteReader();
+            SqlDataReader rdBus = cmSelBusByPK.ExecuteReader();
             if (rdBus.Read())
             {
                 b.Model = rdBus["Model"].ToString();

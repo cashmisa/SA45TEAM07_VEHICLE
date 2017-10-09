@@ -63,13 +63,13 @@ namespace SA45TEAM07_VEHICLE
 
         public void closeUseCase(EnquireVehicleStatusControl enquiryControl)
         {
-            enquiryControl.destroy();
+            enquiryControl.Destroy();
             this.enquiryControl = null;
         }
 
         public void closeUseCase(RentVehicleControl rentControl)
         {
-            rentControl.destroy();
+            rentControl.Destroy();
             this.rentControl = null;
         }
     }

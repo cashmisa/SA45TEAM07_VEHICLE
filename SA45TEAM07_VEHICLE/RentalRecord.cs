@@ -54,7 +54,7 @@ namespace SA45TEAM07_VEHICLE
             }
         }
 
-        internal Customer RentingCustomer
+        public Customer RentingCustomer
         {
             get
             {
