@@ -64,20 +64,21 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(39, 29);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(49, 35);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(504, 222);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox1.Size = new System.Drawing.Size(630, 266);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Details";
             // 
             // btnEnter
             // 
-            this.btnEnter.Location = new System.Drawing.Point(348, 38);
+            this.btnEnter.Location = new System.Drawing.Point(435, 46);
+            this.btnEnter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEnter.Name = "btnEnter";
-            this.btnEnter.Size = new System.Drawing.Size(75, 23);
+            this.btnEnter.Size = new System.Drawing.Size(94, 28);
             this.btnEnter.TabIndex = 16;
             this.btnEnter.Text = "Enter";
             this.btnEnter.UseVisualStyleBackColor = true;
@@ -85,70 +86,78 @@
             // 
             // txbEmail
             // 
-            this.txbEmail.Location = new System.Drawing.Point(197, 169);
+            this.txbEmail.Location = new System.Drawing.Point(246, 203);
+            this.txbEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.ReadOnly = true;
-            this.txbEmail.Size = new System.Drawing.Size(226, 23);
+            this.txbEmail.Size = new System.Drawing.Size(282, 27);
             this.txbEmail.TabIndex = 15;
             // 
             // txbPhone
             // 
-            this.txbPhone.Location = new System.Drawing.Point(197, 127);
+            this.txbPhone.Location = new System.Drawing.Point(246, 152);
+            this.txbPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txbPhone.Name = "txbPhone";
             this.txbPhone.ReadOnly = true;
-            this.txbPhone.Size = new System.Drawing.Size(226, 23);
+            this.txbPhone.Size = new System.Drawing.Size(282, 27);
             this.txbPhone.TabIndex = 14;
             // 
             // txbCusName
             // 
-            this.txbCusName.Location = new System.Drawing.Point(197, 83);
+            this.txbCusName.Location = new System.Drawing.Point(246, 100);
+            this.txbCusName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txbCusName.Name = "txbCusName";
             this.txbCusName.ReadOnly = true;
-            this.txbCusName.Size = new System.Drawing.Size(226, 23);
+            this.txbCusName.Size = new System.Drawing.Size(282, 27);
             this.txbCusName.TabIndex = 13;
             this.txbCusName.TextChanged += new System.EventHandler(this.txbCusName_TextChanged);
             // 
             // txbNRIC
             // 
-            this.txbNRIC.Location = new System.Drawing.Point(197, 37);
+            this.txbNRIC.Location = new System.Drawing.Point(246, 44);
+            this.txbNRIC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txbNRIC.Name = "txbNRIC";
-            this.txbNRIC.Size = new System.Drawing.Size(141, 23);
+            this.txbNRIC.Size = new System.Drawing.Size(175, 27);
             this.txbNRIC.TabIndex = 12;
             this.txbNRIC.TextChanged += new System.EventHandler(this.txbNRIC_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(57, 176);
+            this.label4.Location = new System.Drawing.Point(71, 211);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 15);
+            this.label4.Size = new System.Drawing.Size(61, 19);
             this.label4.TabIndex = 11;
             this.label4.Text = "Email:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(57, 134);
+            this.label3.Location = new System.Drawing.Point(71, 161);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 15);
+            this.label3.Size = new System.Drawing.Size(138, 19);
             this.label3.TabIndex = 10;
             this.label3.Text = "Phone Number:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(57, 90);
+            this.label2.Location = new System.Drawing.Point(71, 108);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 15);
+            this.label2.Size = new System.Drawing.Size(148, 19);
             this.label2.TabIndex = 9;
             this.label2.Text = "Customer Name:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(57, 44);
+            this.label1.Location = new System.Drawing.Point(71, 53);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 15);
+            this.label1.Size = new System.Drawing.Size(94, 19);
             this.label1.TabIndex = 8;
             this.label1.Text = "NRIC/FIN:";
             // 
@@ -158,9 +167,11 @@
             this.groupBox2.Controls.Add(this.dateTimePickerDue);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.dateTimePickerRent);
-            this.groupBox2.Location = new System.Drawing.Point(39, 258);
+            this.groupBox2.Location = new System.Drawing.Point(49, 310);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(504, 145);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(630, 174);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Rental Info";
@@ -168,44 +179,50 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(57, 93);
+            this.label6.Location = new System.Drawing.Point(71, 112);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 15);
+            this.label6.Size = new System.Drawing.Size(112, 19);
             this.label6.TabIndex = 19;
             this.label6.Text = "Return Date:";
             // 
             // dateTimePickerDue
             // 
             this.dateTimePickerDue.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDue.Location = new System.Drawing.Point(197, 85);
+            this.dateTimePickerDue.Location = new System.Drawing.Point(246, 102);
+            this.dateTimePickerDue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePickerDue.MinDate = new System.DateTime(2011, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerDue.Name = "dateTimePickerDue";
-            this.dateTimePickerDue.Size = new System.Drawing.Size(226, 23);
+            this.dateTimePickerDue.Size = new System.Drawing.Size(282, 27);
             this.dateTimePickerDue.TabIndex = 18;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(57, 52);
+            this.label5.Location = new System.Drawing.Point(71, 62);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 15);
+            this.label5.Size = new System.Drawing.Size(94, 19);
             this.label5.TabIndex = 17;
             this.label5.Text = "Rent Date:";
             // 
             // dateTimePickerRent
             // 
             this.dateTimePickerRent.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerRent.Location = new System.Drawing.Point(197, 44);
+            this.dateTimePickerRent.Location = new System.Drawing.Point(246, 53);
+            this.dateTimePickerRent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePickerRent.MinDate = new System.DateTime(1980, 2, 23, 0, 0, 0, 0);
             this.dateTimePickerRent.Name = "dateTimePickerRent";
-            this.dateTimePickerRent.Size = new System.Drawing.Size(226, 23);
+            this.dateTimePickerRent.Size = new System.Drawing.Size(282, 27);
             this.dateTimePickerRent.TabIndex = 0;
+            this.dateTimePickerRent.ValueChanged += new System.EventHandler(this.dateTimePickerRent_ValueChanged);
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(144, 430);
+            this.btnConfirm.Location = new System.Drawing.Point(180, 516);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(106, 31);
+            this.btnConfirm.Size = new System.Drawing.Size(132, 37);
             this.btnConfirm.TabIndex = 1;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
@@ -213,9 +230,10 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(326, 430);
+            this.btnCancel.Location = new System.Drawing.Point(408, 516);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(106, 31);
+            this.btnCancel.Size = new System.Drawing.Size(132, 37);
             this.btnCancel.TabIndex = 10;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -223,12 +241,14 @@
             // 
             // statusStripRentRecordStatus
             // 
+            this.statusStripRentRecordStatus.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStripRentRecordStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabelRentalStatus,
             this.toolStripStatusLabelRentInfo});
-            this.statusStripRentRecordStatus.Location = new System.Drawing.Point(0, 488);
+            this.statusStripRentRecordStatus.Location = new System.Drawing.Point(0, 590);
             this.statusStripRentRecordStatus.Name = "statusStripRentRecordStatus";
-            this.statusStripRentRecordStatus.Size = new System.Drawing.Size(586, 22);
+            this.statusStripRentRecordStatus.Padding = new System.Windows.Forms.Padding(1, 0, 18, 0);
+            this.statusStripRentRecordStatus.Size = new System.Drawing.Size(732, 22);
             this.statusStripRentRecordStatus.TabIndex = 11;
             this.statusStripRentRecordStatus.Text = "statusStrip1";
             // 
@@ -244,15 +264,15 @@
             // 
             // FormRentDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(586, 510);
+            this.ClientSize = new System.Drawing.Size(732, 612);
             this.Controls.Add(this.statusStripRentRecordStatus);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "FormRentDetails";
             this.Text = "Rent Details";
             this.Load += new System.EventHandler(this.FormRentDetails_Load);

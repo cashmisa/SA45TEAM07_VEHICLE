@@ -116,5 +116,10 @@ namespace SA45TEAM07_VEHICLE
             }
         }
 
+        private void dateTimePickerRent_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePickerDue.MinDate = dateTimePickerRent.Value.Date.AddDays(1);
+            dateTimePickerDue.MaxDate = dateTimePickerRent.Value.Date.AddDays(99);
+        }
     }
 }
